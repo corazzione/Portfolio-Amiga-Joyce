@@ -25,11 +25,25 @@ vi.mock('@/components/motion/StaggerChildren', () => ({
   StaggerItem: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
 }))
 
-// TODO: uncomment when component exists
-// import { ProofStripSection } from '@/components/sections/ProofStripSection'
+import { ProofStripSection } from '@/components/sections/ProofStripSection'
 
 describe('ProofStripSection', () => {
-  it.todo('renders Meu Portfolio button')
-  it.todo('renders avatar circles')
-  it.todo('renders all 4 client logo names')
+  it('renders Meu Portfolio button', () => {
+    render(<ProofStripSection />)
+    expect(screen.getByText(/Meu Portfolio/i)).toBeTruthy()
+  })
+
+  it('renders avatar circles', () => {
+    const { container } = render(<ProofStripSection />)
+    const avatars = container.querySelectorAll('.rounded-full.bg-dark\\/20')
+    expect(avatars.length).toBe(3)
+  })
+
+  it('renders all 4 client logo names', () => {
+    render(<ProofStripSection />)
+    expect(screen.getByText('theo')).toBeTruthy()
+    expect(screen.getByText('Amsterdam')).toBeTruthy()
+    expect(screen.getByText('luminous')).toBeTruthy()
+    expect(screen.getByText('MILANO')).toBeTruthy()
+  })
 })

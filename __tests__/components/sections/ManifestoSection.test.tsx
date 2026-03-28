@@ -25,9 +25,11 @@ vi.mock('@/components/motion/StaggerChildren', () => ({
   StaggerItem: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
 }))
 
-// TODO: uncomment when component exists
-// import { ManifestoSection } from '@/components/sections/ManifestoSection'
+import { ManifestoSection } from '@/components/sections/ManifestoSection'
 
 describe('ManifestoSection', () => {
-  it.todo('renders manifesto text content')
+  it('renders manifesto text content', () => {
+    render(<ManifestoSection />)
+    expect(screen.getByText(/Cada imagem/i)).toBeTruthy()
+  })
 })

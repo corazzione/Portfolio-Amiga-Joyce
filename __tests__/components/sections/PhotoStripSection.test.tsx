@@ -25,10 +25,18 @@ vi.mock('@/components/motion/StaggerChildren', () => ({
   StaggerItem: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
 }))
 
-// TODO: uncomment when component exists
-// import { PhotoStripSection } from '@/components/sections/PhotoStripSection'
+import { PhotoStripSection } from '@/components/sections/PhotoStripSection'
 
 describe('PhotoStripSection', () => {
-  it.todo('renders photo strip container')
-  it.todo('renders placeholder thumbnail divs')
+  it('renders photo strip container', () => {
+    const { container } = render(<PhotoStripSection />)
+    const section = container.querySelector('section')
+    expect(section).toBeTruthy()
+  })
+
+  it('renders placeholder thumbnail divs', () => {
+    const { container } = render(<PhotoStripSection />)
+    const thumbs = container.querySelectorAll('.aspect-\\[4\\/3\\]')
+    expect(thumbs.length).toBe(6)
+  })
 })
