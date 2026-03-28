@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: "Completed 01-01-PLAN.md — next step is execute 01-02"
-last_updated: "2026-03-28T05:27:40Z"
+stopped_at: "Completed 01-02-PLAN.md — Phase 01 complete, next phase is 02"
+last_updated: "2026-03-28T05:32:00Z"
 progress:
   total_phases: 7
-  completed_phases: 0
+  completed_phases: 1
   total_plans: 2
-  completed_plans: 1
+  completed_plans: 2
 ---
 
 # Project State
@@ -19,26 +19,26 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-28)
 
 **Core value:** Visitors feel the quality and aesthetic of Joyce's work through the site itself — every scroll, reveal, and interaction communicates premium visual storytelling before they've seen a single photo.
-**Current focus:** Phase 01 — foundation
+**Current focus:** Phase 01 — foundation (COMPLETE)
 
 ## Current Position
 
-Phase: 01 (foundation) — EXECUTING
-Plan: 2 of 2
+Phase: 01 (foundation) — COMPLETE
+Plan: 2 of 2 — COMPLETE
 
 ## Performance Metrics
 
 **Velocity:**
 
-- Total plans completed: 1
+- Total plans completed: 2
 - Average duration: 4 min
-- Total execution time: 0.07 hours
+- Total execution time: 0.13 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| 01-foundation | 1/2 | 4 min | 4 min |
+| 01-foundation | 2/2 | 8 min | 4 min |
 
 **Recent Trend:**
 
@@ -61,6 +61,10 @@ Recent decisions affecting current work:
 - [01-01]: next.config kept as .mjs (scaffold default) — functionally equivalent to .ts
 - [01-01]: autoprefixer added to postcss.config.mjs — omitted by create-next-app scaffold
 - [01-01]: Scaffolded in temp dir due to Fotógrafo directory name having non-URL chars
+- [01-02]: Animation easing curve [0.22, 1, 0.36, 1] with 0.8s duration — project-wide editorial feel
+- [01-02]: lib/data.ts is a single file (not lib/data/*.ts) — plan spec overrides architecture doc; easy to split later
+- [01-02]: RevealWrapper useInView margin '-40px' — triggers slightly before element fully enters viewport
+- [01-02]: StaggerChildren exports both container and StaggerItem child — flexible composition pattern
 
 ### Pending Todos
 
@@ -75,5 +79,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-28
-Stopped at: Completed 01-01-PLAN.md — next step is execute 01-02
+Stopped at: Completed 01-02-PLAN.md — Phase 01 complete, next phase is 02
 Resume file: None

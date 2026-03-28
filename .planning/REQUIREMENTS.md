@@ -11,10 +11,10 @@
 - [x] **FOUND-02**: Switzer variable font is self-hosted via `next/font/local` from `app/fonts/Switzer-Variable.woff2` and exposed as a CSS variable in Tailwind config
 - [x] **FOUND-03**: Public Sans is loaded via `next/font/google` and exposed as a CSS variable in Tailwind config
 - [x] **FOUND-04**: Tailwind config has all custom tokens: `colors.bg` (#EFE8DC), `colors.gold` (#C8973A), `colors.dark` (#1a1a1a), `fontFamily.switzer`, `fontFamily.sans` (Public Sans)
-- [ ] **FOUND-05**: Global animation variants are defined in `lib/animation-variants.ts` (fade+translateY, stagger, scale-in, spring)
-- [ ] **FOUND-06**: `RevealWrapper` and `StaggerChildren` client components are created in `components/motion/` and used site-wide for scroll reveals
-- [ ] **FOUND-07**: Static content data (services, process steps, testimonials, blog posts, FAQ, logos) lives in `lib/data.ts`
-- [ ] **FOUND-08**: `vercel.json` is configured with appropriate headers and deploy settings
+- [x] **FOUND-05**: Global animation variants are defined in `lib/animation-variants.ts` (fade+translateY, stagger, scale-in, spring)
+- [x] **FOUND-06**: `RevealWrapper` and `StaggerChildren` client components are created in `components/motion/` and used site-wide for scroll reveals
+- [x] **FOUND-07**: Static content data (services, process steps, testimonials, blog posts, FAQ, logos) lives in `lib/data.ts`
+- [x] **FOUND-08**: `vercel.json` is configured with appropriate headers and deploy settings
 
 ### Navigation
 
