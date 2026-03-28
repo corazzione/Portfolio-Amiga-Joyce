@@ -65,11 +65,11 @@
 
 ### Responsive
 
-- [ ] **RESP-01**: Layout reflows to single-column vertical stacks on mobile (not just scaled-down desktop)
-- [ ] **RESP-02**: Services grid goes from 4-column to 2-column to 1-column on progressively smaller screens
-- [ ] **RESP-03**: Bento grid adapts to stacked single-column on mobile
-- [ ] **RESP-04**: Hero text selector remains legible and functional on mobile
-- [ ] **RESP-05**: Bottom bar and fullscreen menu overlay work correctly on mobile
+- [x] **RESP-01**: Layout reflows to single-column vertical stacks on mobile (not just scaled-down desktop)
+- [x] **RESP-02**: Services grid goes from 4-column to 2-column to 1-column on progressively smaller screens
+- [x] **RESP-03**: Bento grid adapts to stacked single-column on mobile
+- [x] **RESP-04**: Hero text selector remains legible and functional on mobile
+- [x] **RESP-05**: Bottom bar and fullscreen menu overlay work correctly on mobile
 - [ ] **RESP-06**: Testimonial cards are fully readable on mobile with touch swipe support
 - [ ] **RESP-07**: Process cards sticky effect has a graceful mobile fallback (regular stacked cards if sticky scroll is impractical on touch)
 
