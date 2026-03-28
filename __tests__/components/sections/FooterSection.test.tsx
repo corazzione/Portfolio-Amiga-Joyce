@@ -25,11 +25,21 @@ vi.mock('@/components/motion/StaggerChildren', () => ({
   StaggerItem: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
 }))
 
-// TODO: uncomment when component exists
-// import { FooterSection } from '@/components/sections/FooterSection'
+import { FooterSection } from '@/components/sections/FooterSection'
 
 describe('FooterSection', () => {
-  it.todo('renders Corazon brand name')
-  it.todo('renders MC copyright 2026')
-  it.todo('renders Criado por Markus Corazzione')
+  it('renders Corazon brand name', () => {
+    render(<FooterSection />)
+    expect(screen.getByText(/Corazon/i)).toBeTruthy()
+  })
+
+  it('renders MC copyright 2026', () => {
+    render(<FooterSection />)
+    expect(screen.getByText(/MC\..*2026/)).toBeTruthy()
+  })
+
+  it('renders Criado por Markus Corazzione', () => {
+    render(<FooterSection />)
+    expect(screen.getByText(/Criado por Markus Corazzione/i)).toBeTruthy()
+  })
 })

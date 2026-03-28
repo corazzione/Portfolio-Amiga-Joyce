@@ -25,10 +25,17 @@ vi.mock('@/components/motion/StaggerChildren', () => ({
   StaggerItem: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
 }))
 
-// TODO: uncomment when component exists
-// import { CTASection } from '@/components/sections/CTASection'
+import { CTASection } from '@/components/sections/CTASection'
 
 describe('CTASection', () => {
-  it.todo('renders Transforme heading text')
-  it.todo('renders Entre em Contato link to /contato')
+  it('renders Transforme heading text', () => {
+    render(<CTASection />)
+    expect(screen.getByText(/Transforme Suas Ideias/i)).toBeTruthy()
+  })
+
+  it('renders Entre em Contato link to /contato', () => {
+    render(<CTASection />)
+    const link = screen.getByRole('link', { name: /Entre em Contato/i })
+    expect(link.getAttribute('href')).toBe('/contato')
+  })
 })
