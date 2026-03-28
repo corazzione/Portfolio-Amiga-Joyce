@@ -112,7 +112,7 @@ Plans:
   2. `/portfolio` page loads and displays a grid of portfolio work (placeholder images with category labels)
   3. `/contato` page shows a form with name, email, subject, and message fields; submitting the form sends an email and displays a success or error state to the user
   4. `/privacidade` page renders LGPD-compliant privacy policy content in Portuguese
-**Plans:** 2 plans
+**Plans:** 1/2 plans executed
 
 Plans:
 - [ ] 06-01-PLAN.md — Wave 0 test stubs + ContactForm component + portfolio page + contact page
@@ -142,5 +142,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7
 | 3. Hero + Animation System | 2/2 | Complete   | 2026-03-28 |
 | 4. Static Content Sections | 3/3 | Complete   | 2026-03-28 |
 | 5. Complex Interactive Sections | 2/2 | Complete   | 2026-03-28 |
-| 6. Additional Pages | 0/2 | Planned | - |
+| 6. Additional Pages | 1/2 | In Progress|  |
 | 7. Mobile Responsive + Performance | 0/TBD | Not started | - |
