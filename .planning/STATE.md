@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: unknown
-stopped_at: Completed 04-01-PLAN.md
-last_updated: "2026-03-28T06:52:25.367Z"
+status: executing
+stopped_at: Completed 04-03-PLAN.md
+last_updated: "2026-03-28T03:58:00Z"
 progress:
   total_phases: 7
-  completed_phases: 3
+  completed_phases: 4
   total_plans: 9
-  completed_plans: 7
+  completed_plans: 9
 ---
 
 # Project State
@@ -19,12 +19,12 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-28)
 
 **Core value:** Visitors feel the quality and aesthetic of Joyce's work through the site itself — every scroll, reveal, and interaction communicates premium visual storytelling before they've seen a single photo.
-**Current focus:** Phase 04 — static-content-sections
+**Current focus:** Phase 05 — interactive-sections
 
 ## Current Position
 
-Phase: 04 (static-content-sections) — EXECUTING
-Plan: 2 of 3
+Phase: 04 (static-content-sections) — COMPLETE
+Plan: 3 of 3 (all done)
 
 ## Performance Metrics
 
@@ -49,6 +49,8 @@ Plan: 2 of 3
 
 *Updated after each plan completion*
 | Phase 04 P01 | 2 | 3 tasks | 15 files |
+| Phase 04 P02 | 2 | 3 tasks | 7 files |
+| Phase 04 P03 | 3 | 2 tasks | 5 files |
 
 ## Accumulated Context
 
@@ -81,6 +83,12 @@ Recent decisions affecting current work:
 - [03-02]: Video src='' intentional — gradient div covers blank video, no broken icon; real asset wired in by setting src
 - [Phase 04-01]: Server Component sections delegate 'use client' boundary to ServiceCard only — keeps animation contained to interactive leaf nodes
 - [Phase 04-01]: Test stubs use it.todo() not commented describe blocks — vitest recognizes files without import errors from non-existent components
+- [Phase 04-02]: PortfolioSection uses 6 static inline items (not from data.ts) — easy to migrate when real portfolio content is available
+- [Phase 04-02]: FAQSection uses height 0->auto motion animation without AnimatePresence — persistent DOM element pattern, simpler than unmount/remount
+- [Phase 04-02]: BlogSection hr uses i>0 guard — separators appear only between posts, no leading or trailing hr
+- [Phase 04-03]: FooterSection uses semantic <footer> element (not <section>) for correct HTML semantics
+- [Phase 04-03]: Social links are plain text (X, Instagram) — no SVG icons per CONTEXT.md placeholder approach for Phase 4
+- [Phase 04-03]: Phase 5 placeholders use aria-hidden="true" empty <section> elements for anchor targets without visual content
 
 ### Pending Todos
 
@@ -94,6 +102,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-28T06:52:17.917Z
-Stopped at: Completed 04-01-PLAN.md
+Last session: 2026-03-28T03:58:00Z
+Stopped at: Completed 04-03-PLAN.md
 Resume file: None

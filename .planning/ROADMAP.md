@@ -15,7 +15,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 1: Foundation** - Scaffold Next.js 14 with locked design system, fonts, Tailwind tokens, animation primitives, and Vercel deployment (completed 2026-03-28)
 - [x] **Phase 2: Navigation Shell** - Top navbar, fixed bottom bar, and fullscreen menu overlay across all pages (completed 2026-03-28)
 - [x] **Phase 3: Hero + Animation System** - Full-screen hero section and reusable scroll-reveal primitives consumed by every subsequent section (completed 2026-03-28)
-- [ ] **Phase 4: Static Content Sections** - All homepage sections including FAQ, CTA, and footer
+- [x] **Phase 4: Static Content Sections** - All homepage sections including FAQ, CTA, and footer (completed 2026-03-28)
 - [ ] **Phase 5: Complex Interactive Sections** - Sticky stacked process cards and dark cinematic testimonial carousel
 - [ ] **Phase 6: Additional Pages** - Sub-pages /portfolio, /contato, and /privacidade
 - [ ] **Phase 7: Mobile Responsive + Performance** - Genuine mobile redesign at all breakpoints and Lighthouse performance pass
@@ -80,12 +80,12 @@ Plans:
   3. "Meus Serviços" displays a 4-column white card grid with 7 service cards + 1 photo card; cards stagger-reveal on scroll; "Trabalhos Selecionados" shows a 3-column portfolio preview grid; "Últimas Histórias" shows 3 blog cards with horizontal separators
   4. FAQ section shows "Alguma Dúvida?" title left and an accordion right with 4 Portuguese questions that expand and collapse with animation
   5. Final CTA section shows the heading and "Entre em Contato" button; footer renders with Corazón brand, social links, and "MC. © 2026" — the homepage is complete end-to-end
-**Plans:** 1/3 plans executed
+**Plans:** 3/3 plans complete
 
 Plans:
-- [ ] 04-01-PLAN.md — Wave 0 test stubs + PhotoStrip, Manifesto, ProofStrip, Services sections
-- [ ] 04-02-PLAN.md — Portfolio, Blog, FAQ sections
-- [ ] 04-03-PLAN.md — CTA, Footer sections + page.tsx integration + build verification
+- [x] 04-01-PLAN.md — Wave 0 test stubs + PhotoStrip, Manifesto, ProofStrip, Services sections
+- [x] 04-02-PLAN.md — Portfolio, Blog, FAQ sections
+- [x] 04-03-PLAN.md — CTA, Footer sections + page.tsx integration + build verification
 
 ### Phase 5: Complex Interactive Sections
 **Goal**: The two highest-craft sections work correctly in production — sticky process cards stack on scroll and the cinematic testimonial carousel auto-advances with a dark video background
@@ -132,7 +132,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7
 | 1. Foundation | 2/2 | Complete   | 2026-03-28 |
 | 2. Navigation Shell | 2/2 | Complete   | 2026-03-28 |
 | 3. Hero + Animation System | 2/2 | Complete   | 2026-03-28 |
-| 4. Static Content Sections | 1/3 | In Progress|  |
+| 4. Static Content Sections | 3/3 | Complete   | 2026-03-28 |
 | 5. Complex Interactive Sections | 0/TBD | Not started | - |
 | 6. Additional Pages | 0/TBD | Not started | - |
 | 7. Mobile Responsive + Performance | 0/TBD | Not started | - |

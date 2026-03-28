@@ -42,8 +42,8 @@
 - [ ] **SECT-06**: "Trabalhos Selecionados" section shows a 3-column portfolio preview grid with image + caption; items stagger-reveal on scroll
 - [ ] **SECT-07**: "Últimas Histórias" section shows 3 blog preview cards with horizontal line separators between them
 - [ ] **SECT-08**: FAQ section has "Alguma Dúvida?" title on the left and an accordion on the right with 4 questions in Portuguese; accordion items expand/collapse with animation
-- [ ] **SECT-09**: Final CTA section shows "Transforme Suas Ideias em Visuais de Outro Nível" heading, "Entre em Contato" button, and a standing model/photographer figure emerging from the bottom
-- [ ] **SECT-10**: Footer has a white card on beige background containing: "Corazón" brand name, Portuguese tagline, X + Instagram social links, "Explorar" nav links, legal links, "Criado por Markus Corazzione", "MC. © 2026"
+- [x] **SECT-09**: Final CTA section shows "Transforme Suas Ideias em Visuais de Outro Nível" heading, "Entre em Contato" button, and a standing model/photographer figure emerging from the bottom
+- [x] **SECT-10**: Footer has a white card on beige background containing: "Corazón" brand name, Portuguese tagline, X + Instagram social links, "Explorar" nav links, legal links, "Criado por Markus Corazzione", "MC. © 2026"
 
 ### Sections — Complex Interactive
 
