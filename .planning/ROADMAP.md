@@ -32,7 +32,11 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. `lib/animation-variants.ts` exports `fadeUp`, `stagger`, `scaleIn`, and spring variants; `RevealWrapper` and `StaggerChildren` components exist and can wrap any element
   4. `lib/data.ts` exports typed static content stubs for all sections (services, process steps, testimonials, blog posts, FAQ)
   5. Site deploys successfully to Vercel from the `corazzione/Portfolio-Amiga-Joyce` repo and is publicly accessible at a Vercel URL
-**Plans**: TBD
+**Plans:** 2 plans
+
+Plans:
+- [ ] 01-01-PLAN.md — Scaffold Next.js 14, install dependencies, configure Tailwind tokens and fonts
+- [ ] 01-02-PLAN.md — Create animation variants, motion wrapper components, static data stubs, and Vercel config
 
 ### Phase 2: Navigation Shell
 **Goal**: Site-wide persistent navigation is live and functional on all pages — visitors can open the menu, navigate, and close it at any scroll position
@@ -112,7 +116,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 0/TBD | Not started | - |
+| 1. Foundation | 0/2 | Planning complete | - |
 | 2. Navigation Shell | 0/TBD | Not started | - |
 | 3. Hero + Animation System | 0/TBD | Not started | - |
 | 4. Static Content Sections | 0/TBD | Not started | - |
