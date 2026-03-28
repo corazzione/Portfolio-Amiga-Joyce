@@ -14,7 +14,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Foundation** - Scaffold Next.js 14 with locked design system, fonts, Tailwind tokens, animation primitives, and Vercel deployment (completed 2026-03-28)
 - [x] **Phase 2: Navigation Shell** - Top navbar, fixed bottom bar, and fullscreen menu overlay across all pages (completed 2026-03-28)
-- [ ] **Phase 3: Hero + Animation System** - Full-screen hero section and reusable scroll-reveal primitives consumed by every subsequent section
+- [x] **Phase 3: Hero + Animation System** - Full-screen hero section and reusable scroll-reveal primitives consumed by every subsequent section (completed 2026-03-28)
 - [ ] **Phase 4: Static Content Sections** - All homepage sections including FAQ, CTA, and footer
 - [ ] **Phase 5: Complex Interactive Sections** - Sticky stacked process cards and dark cinematic testimonial carousel
 - [ ] **Phase 6: Additional Pages** - Sub-pages /portfolio, /contato, and /privacidade
@@ -64,7 +64,7 @@ Plans:
   3. The text selector cycles through "A Criação / Videografia / Fotografia" with smooth animated transitions driven by scroll or auto-advance
   4. Any element wrapped in `RevealWrapper` fades in from y=24 to y=0 at 0.8s cubic-bezier(0.22,1,0.36,1) when it enters the viewport; elements wrapped in `StaggerChildren` stagger at 0.1s intervals
   5. All animations produce zero motion when `prefers-reduced-motion` is enabled in the OS
-**Plans:** 1/2 plans executed
+**Plans:** 2/2 plans complete
 
 Plans:
 - [ ] 03-01-PLAN.md — Install Vitest, upgrade RevealWrapper + StaggerChildren with variant prop and reduced-motion guard, create HeroTextSelector
@@ -126,7 +126,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7
 |-------|----------------|--------|-----------|
 | 1. Foundation | 2/2 | Complete   | 2026-03-28 |
 | 2. Navigation Shell | 2/2 | Complete   | 2026-03-28 |
-| 3. Hero + Animation System | 1/2 | In Progress|  |
+| 3. Hero + Animation System | 2/2 | Complete   | 2026-03-28 |
 | 4. Static Content Sections | 0/TBD | Not started | - |
 | 5. Complex Interactive Sections | 0/TBD | Not started | - |
 | 6. Additional Pages | 0/TBD | Not started | - |

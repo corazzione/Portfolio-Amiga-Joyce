@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: unknown
-stopped_at: Completed 03-01-PLAN.md
-last_updated: "2026-03-28T03:27:00.000Z"
+status: phase-complete
+stopped_at: Completed 03-02-PLAN.md
+last_updated: "2026-03-28T03:31:00.000Z"
 progress:
   total_phases: 7
-  completed_phases: 2
+  completed_phases: 3
   total_plans: 6
-  completed_plans: 5
+  completed_plans: 6
 ---
 
 # Project State
@@ -19,20 +19,20 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-28)
 
 **Core value:** Visitors feel the quality and aesthetic of Joyce's work through the site itself — every scroll, reveal, and interaction communicates premium visual storytelling before they've seen a single photo.
-**Current focus:** Phase 03 — hero-animation-system
+**Current focus:** Phase 03 — hero-animation-system (COMPLETE)
 
 ## Current Position
 
-Phase: 03 (hero-animation-system) — EXECUTING
+Phase: 03 (hero-animation-system) — COMPLETE
 Plan: 2 of 2
 
 ## Performance Metrics
 
 **Velocity:**
 
-- Total plans completed: 4
+- Total plans completed: 6
 - Average duration: 3 min
-- Total execution time: 0.2 hours
+- Total execution time: 0.3 hours
 
 **By Phase:**
 
@@ -40,11 +40,11 @@ Plan: 2 of 2
 |-------|-------|-------|----------|
 | 01-foundation | 2/2 | 8 min | 4 min |
 | 02-navigation-shell | 2/2 | 4 min | 2 min |
-| 03-hero-animation-system | 1/2 | 3 min | 3 min |
+| 03-hero-animation-system | 2/2 | 7 min | 3.5 min |
 
 **Recent Trend:**
 
-- Last 5 plans: 2 min
+- Last 5 plans: 3 min
 - Trend: fast
 
 *Updated after each plan completion*
@@ -75,6 +75,9 @@ Recent decisions affecting current work:
 - [03-01]: vi.hoisted() required for mock variables used inside vi.mock() factory — Vitest hoists vi.mock() before const declarations
 - [03-01]: HeroSection.test.tsx uses it.todo() stubs — HeroSection component created in Plan 03-02, expected to fail until then
 - [03-01]: AnimatePresence key uses text string not index — required for proper exit animation triggering in HeroTextSelector
+- [03-02]: HeroSection uses initial/animate (not useInView) — page-load entrance must fire without scroll for above-the-fold content
+- [03-02]: motion.p and motion.a added to test mock — plan used these elements not covered by 03-01 stub
+- [03-02]: Video src='' intentional — gradient div covers blank video, no broken icon; real asset wired in by setting src
 
 ### Pending Todos
 
@@ -88,6 +91,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-28T03:27:00.000Z
-Stopped at: Completed 03-01-PLAN.md
-Resume file: .planning/phases/03-hero-animation-system/03-02-PLAN.md
+Last session: 2026-03-28T03:31:00.000Z
+Stopped at: Completed 03-02-PLAN.md
+Resume file: .planning/phases/04-portfolio-grid/04-01-PLAN.md
