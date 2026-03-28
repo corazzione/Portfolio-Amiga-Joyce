@@ -1,38 +1,39 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import { motion, AnimatePresence, useReducedMotion } from 'motion/react'
+import { useReducedMotion } from 'motion/react'
 
 const texts = ['A Criação', 'Videografia', 'Fotografia'] as const
 
-export function HeroTextSelector() {
-  const [index, setIndex] = useState(0)
+interface Props {
+  activeIndex: number
+  onSelect: (index: number) => void
+}
+
+export function HeroTextSelector({ activeIndex, onSelect }: Props) {
   const prefersReduced = useReducedMotion()
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % texts.length)
-    }, 3000)
-    return () => clearInterval(interval)
-  }, [])
-
   return (
-    <div className="relative h-[1.2em] overflow-hidden">
-      <AnimatePresence mode="wait">
-        <motion.span
-          key={texts[index]}
-          initial={prefersReduced ? { opacity: 1, y: 0 } : { opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={prefersReduced ? { opacity: 1, y: 0 } : { opacity: 0, y: -12 }}
-          transition={prefersReduced ? { duration: 0 } : {
-            duration: 0.4,
-            ease: [0.22, 1, 0.36, 1],
-          }}
-          className="absolute inset-0 text-gold font-switzer text-2xl md:text-4xl font-bold tracking-wide"
-        >
-          {texts[index]}
-        </motion.span>
-      </AnimatePresence>
+    <div className="flex flex-col items-center select-none" style={{ gap: '6px' }}>
+      {texts.map((text, i) => {
+        const isActive = i === activeIndex
+        return (
+          <p
+            key={text}
+            onClick={() => onSelect(i)}
+            className="font-switzer text-center cursor-pointer"
+            style={{
+              fontSize: isActive ? 'clamp(40px, 7vw, 88px)' : 'clamp(14px, 2vw, 18px)',
+              color: isActive ? 'rgb(255,255,255)' : 'rgba(255,255,255,0.3)',
+              fontWeight: isActive ? 700 : 500,
+              letterSpacing: isActive ? '-0.03em' : '0.02em',
+              lineHeight: isActive ? 1 : undefined,
+              transition: prefersReduced ? 'none' : 'all 0.4s ease',
+            }}
+          >
+            {text}
+          </p>
+        )
+      })}
     </div>
   )
 }

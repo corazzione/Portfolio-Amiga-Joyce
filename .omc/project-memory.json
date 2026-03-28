@@ -1,0 +1,335 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1774672720547,
+  "projectRoot": "E:\\Fotógrafo",
+  "techStack": {
+    "languages": [],
+    "frameworks": [],
+    "packageManager": null,
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": null,
+    "testCommand": null,
+    "lintCommand": null,
+    "devCommand": null,
+    "scripts": {}
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": null,
+    "testPattern": null,
+    "fileOrganization": null
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [],
+    "gitBranches": null
+  },
+  "customNotes": [],
+  "directoryMap": {},
+  "hotPaths": [
+    {
+      "path": ".planning\\STATE.md",
+      "accessCount": 105,
+      "lastAccessed": 1774686400925,
+      "type": "file"
+    },
+    {
+      "path": ".planning\\ROADMAP.md",
+      "accessCount": 65,
+      "lastAccessed": 1774685487290,
+      "type": "file"
+    },
+    {
+      "path": ".planning\\REQUIREMENTS.md",
+      "accessCount": 37,
+      "lastAccessed": 1774685965121,
+      "type": "file"
+    },
+    {
+      "path": "index.html",
+      "accessCount": 34,
+      "lastAccessed": 1774695899351,
+      "type": "file"
+    },
+    {
+      "path": ".planning\\PROJECT.md",
+      "accessCount": 26,
+      "lastAccessed": 1774686661276,
+      "type": "file"
+    },
+    {
+      "path": "app\\page.tsx",
+      "accessCount": 24,
+      "lastAccessed": 1774695107032,
+      "type": "file"
+    },
+    {
+      "path": "app\\layout.tsx",
+      "accessCount": 24,
+      "lastAccessed": 1774697320508,
+      "type": "file"
+    },
+    {
+      "path": ".planning\\config.json",
+      "accessCount": 23,
+      "lastAccessed": 1774686238655,
+      "type": "file"
+    },
+    {
+      "path": "components\\motion\\RevealWrapper.tsx",
+      "accessCount": 19,
+      "lastAccessed": 1774683468702,
+      "type": "file"
+    },
+    {
+      "path": "components\\motion\\StaggerChildren.tsx",
+      "accessCount": 14,
+      "lastAccessed": 1774683468789,
+      "type": "file"
+    },
+    {
+      "path": "lib\\animation-variants.ts",
+      "accessCount": 13,
+      "lastAccessed": 1774681589341,
+      "type": "file"
+    },
+    {
+      "path": "lib\\data.ts",
+      "accessCount": 12,
+      "lastAccessed": 1774682843799,
+      "type": "file"
+    },
+    {
+      "path": ".planning\\phases\\02-navigation-shell\\02-01-PLAN.md",
+      "accessCount": 10,
+      "lastAccessed": 1774677751084,
+      "type": "file"
+    },
+    {
+      "path": ".planning\\research\\PITFALLS.md",
+      "accessCount": 10,
+      "lastAccessed": 1774681580290,
+      "type": "file"
+    },
+    {
+      "path": "tailwind.config.ts",
+      "accessCount": 9,
+      "lastAccessed": 1774684808150,
+      "type": "file"
+    },
+    {
+      "path": ".planning\\research\\STACK.md",
+      "accessCount": 8,
+      "lastAccessed": 1774676386149,
+      "type": "file"
+    },
+    {
+      "path": "app\\globals.css",
+      "accessCount": 8,
+      "lastAccessed": 1774677755760,
+      "type": "file"
+    },
+    {
+      "path": ".planning\\research\\ARCHITECTURE.md",
+      "accessCount": 7,
+      "lastAccessed": 1774678003509,
+      "type": "file"
+    },
+    {
+      "path": ".planning\\phases\\02-navigation-shell\\02-CONTEXT.md",
+      "accessCount": 6,
+      "lastAccessed": 1774677311572,
+      "type": "file"
+    },
+    {
+      "path": ".planning\\research\\SUMMARY.md",
+      "accessCount": 5,
+      "lastAccessed": 1774675113246,
+      "type": "file"
+    },
+    {
+      "path": ".planning\\phases\\02-navigation-shell\\02-02-PLAN.md",
+      "accessCount": 5,
+      "lastAccessed": 1774677751154,
+      "type": "file"
+    },
+    {
+      "path": "package.json",
+      "accessCount": 5,
+      "lastAccessed": 1774683194561,
+      "type": "file"
+    },
+    {
+      "path": "C:\\Users\\coraz\\.claude\\get-shit-done\\templates\\summary.md",
+      "accessCount": 5,
+      "lastAccessed": 1774686123688,
+      "type": "file"
+    },
+    {
+      "path": "vercel.json",
+      "accessCount": 5,
+      "lastAccessed": 1774686490256,
+      "type": "file"
+    },
+    {
+      "path": ".planning\\phases\\01-foundation\\01-01-PLAN.md",
+      "accessCount": 4,
+      "lastAccessed": 1774676002249,
+      "type": "file"
+    },
+    {
+      "path": ".planning\\phases\\01-foundation\\01-02-PLAN.md",
+      "accessCount": 4,
+      "lastAccessed": 1774676002659,
+      "type": "file"
+    },
+    {
+      "path": ".planning\\phases\\02-navigation-shell\\02-RESEARCH.md",
+      "accessCount": 4,
+      "lastAccessed": 1774677192353,
+      "type": "file"
+    },
+    {
+      "path": ".planning\\phases\\02-navigation-shell\\02-VALIDATION.md",
+      "accessCount": 4,
+      "lastAccessed": 1774677246335,
+      "type": "file"
+    },
+    {
+      "path": "lib\\utils.ts",
+      "accessCount": 4,
+      "lastAccessed": 1774677317118,
+      "type": "file"
+    },
+    {
+      "path": "next.config.mjs",
+      "accessCount": 3,
+      "lastAccessed": 1774676016553,
+      "type": "file"
+    },
+    {
+      "path": "app\\fonts.ts",
+      "accessCount": 3,
+      "lastAccessed": 1774676395118,
+      "type": "file"
+    },
+    {
+      "path": ".planning\\phases\\01-foundation\\01-02-SUMMARY.md",
+      "accessCount": 3,
+      "lastAccessed": 1774676705999,
+      "type": "file"
+    },
+    {
+      "path": ".planning",
+      "accessCount": 3,
+      "lastAccessed": 1774680462759,
+      "type": "directory"
+    },
+    {
+      "path": ".planning\\research\\FEATURES.md",
+      "accessCount": 2,
+      "lastAccessed": 1774673482095,
+      "type": "file"
+    },
+    {
+      "path": "postcss.config.mjs",
+      "accessCount": 2,
+      "lastAccessed": 1774675520597,
+      "type": "file"
+    },
+    {
+      "path": ".planning\\phases\\01-foundation\\01-01-SUMMARY.md",
+      "accessCount": 2,
+      "lastAccessed": 1774676002784,
+      "type": "file"
+    },
+    {
+      "path": ".planning\\phases\\02-navigation-shell",
+      "accessCount": 2,
+      "lastAccessed": 1774677244056,
+      "type": "directory"
+    },
+    {
+      "path": "tsconfig.json",
+      "accessCount": 2,
+      "lastAccessed": 1774678938035,
+      "type": "file"
+    },
+    {
+      "path": "C:\\Users\\coraz\\.claude\\get-shit-done\\workflows\\new-project.md",
+      "accessCount": 1,
+      "lastAccessed": 1774672896820,
+      "type": "file"
+    },
+    {
+      "path": "C:\\Users\\coraz\\.claude\\get-shit-done\\templates\\research-project\\STACK.md",
+      "accessCount": 1,
+      "lastAccessed": 1774673200086,
+      "type": "file"
+    },
+    {
+      "path": "C:\\Users\\coraz\\.claude\\get-shit-done\\templates\\research-project\\FEATURES.md",
+      "accessCount": 1,
+      "lastAccessed": 1774673206715,
+      "type": "file"
+    },
+    {
+      "path": "C:\\Users\\coraz\\.claude\\get-shit-done\\templates\\research-project\\ARCHITECTURE.md",
+      "accessCount": 1,
+      "lastAccessed": 1774673213147,
+      "type": "file"
+    },
+    {
+      "path": "C:\\Users\\coraz\\.claude\\get-shit-done\\templates\\research-project\\PITFALLS.md",
+      "accessCount": 1,
+      "lastAccessed": 1774673219744,
+      "type": "file"
+    },
+    {
+      "path": "C:\\Users\\coraz\\.claude\\get-shit-done\\templates\\research-project\\SUMMARY.md",
+      "accessCount": 1,
+      "lastAccessed": 1774673482566,
+      "type": "file"
+    },
+    {
+      "path": "C:\\Users\\coraz\\.claude\\get-shit-done\\templates\\roadmap.md",
+      "accessCount": 1,
+      "lastAccessed": 1774673743039,
+      "type": "file"
+    },
+    {
+      "path": "C:\\Users\\coraz\\.claude\\get-shit-done\\templates\\state.md",
+      "accessCount": 1,
+      "lastAccessed": 1774673743234,
+      "type": "file"
+    },
+    {
+      "path": "C:\\Users\\coraz\\.claude\\get-shit-done\\workflows\\plan-phase.md",
+      "accessCount": 1,
+      "lastAccessed": 1774674723405,
+      "type": "file"
+    },
+    {
+      "path": "C:\\Users\\coraz\\AppData\\Local\\Temp\\claude\\E--Fot-grafo\\1ccf81aa-9629-450f-9885-62acf4a739cc\\tasks\\bz1squ0q7.output",
+      "accessCount": 1,
+      "lastAccessed": 1774675480796,
+      "type": "file"
+    },
+    {
+      "path": ".planning\\phases\\01-foundation\\01-VERIFICATION.md",
+      "accessCount": 1,
+      "lastAccessed": 1774676107750,
+      "type": "file"
+    },
+    {
+      "path": "C:\\Users\\coraz\\.claude\\get-shit-done\\workflows\\transition.md",
+      "accessCount": 1,
+      "lastAccessed": 1774676239067,
+      "type": "file"
+    }
+  ],
+  "userDirectives": []
+}

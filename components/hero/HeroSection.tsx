@@ -1,75 +1,50 @@
 'use client'
 
-import { motion, useReducedMotion } from 'motion/react'
+import { useRef, useState, useEffect, useCallback } from 'react'
+import { useReducedMotion } from 'motion/react'
 import { HeroTextSelector } from '@/components/hero/HeroTextSelector'
 
+const TEXTS_COUNT = 3
+
 export function HeroSection() {
+  const sectionRef = useRef<HTMLElement>(null)
+  const [activeIndex, setActiveIndex] = useState(1)
   const prefersReduced = useReducedMotion()
 
+  const handleScroll = useCallback(() => {
+    const hero = sectionRef.current
+    if (!hero) return
+    const heroBottom = hero.offsetTop + hero.offsetHeight
+    if (window.scrollY < heroBottom) {
+      const progress = window.scrollY / (hero.offsetHeight * 0.5)
+      const idx = Math.min(TEXTS_COUNT - 1, Math.floor(progress * TEXTS_COUNT))
+      setActiveIndex(idx)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (prefersReduced) return
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [handleScroll, prefersReduced])
+
   return (
-    <section className="relative h-screen flex flex-col items-center justify-center overflow-hidden">
-      {/* Background: dark gradient + video element */}
-      <div className="absolute inset-0 bg-gradient-to-b from-dark via-dark/90 to-dark">
-        {/* Video: self-host on Vercel Blob or Cloudinary, set NEXT_PUBLIC_VIDEO_URL env var */}
-        {/* Example: <video src={process.env.NEXT_PUBLIC_VIDEO_URL} autoPlay muted loop playsInline /> */}
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-        />
+    <section
+      ref={sectionRef}
+      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
+      style={{ padding: '80px 24px 100px' }}
+    >
+      {/* Background: photo/image goes here */}
+      <div className="absolute inset-0 bg-dark">
+        {/* Image: self-host and set NEXT_PUBLIC_HERO_IMAGE_URL env var */}
+        {/* <img src={process.env.NEXT_PUBLIC_HERO_IMAGE_URL} alt="" className="absolute inset-0 w-full h-full object-cover" /> */}
       </div>
 
-      {/* Dark overlay for text contrast */}
+      {/* Overlay for text contrast */}
       <div className="absolute inset-0 bg-dark/40" />
 
-      {/* Content overlay */}
-      <div className="relative z-10 flex flex-col items-center text-center gap-6 px-6">
-
-        {/* Logo/tagline — delay 0.2s */}
-        <motion.p
-          initial={prefersReduced ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={prefersReduced ? { duration: 0 } : {
-            duration: 0.8,
-            delay: 0.2,
-            ease: [0.22, 1, 0.36, 1],
-          }}
-          className="font-switzer text-sm md:text-base uppercase tracking-widest text-white"
-        >
-          MC. {'//'}  UMA CONTADORA DE HISTORIAS VISUAL
-        </motion.p>
-
-        {/* Text selector — delay 0.5s */}
-        <motion.div
-          initial={prefersReduced ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={prefersReduced ? { duration: 0 } : {
-            duration: 0.8,
-            delay: 0.5,
-            ease: [0.22, 1, 0.36, 1],
-          }}
-        >
-          <HeroTextSelector />
-        </motion.div>
-
-        {/* CTA button — delay 0.8s */}
-        <motion.a
-          href="#portfolio"
-          initial={prefersReduced ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={prefersReduced ? { duration: 0 } : {
-            duration: 0.8,
-            delay: 0.8,
-            ease: [0.22, 1, 0.36, 1],
-          }}
-          whileHover={prefersReduced ? {} : { scale: 1.05 }}
-          whileTap={prefersReduced ? {} : { scale: 0.98 }}
-          className="inline-block bg-gold text-dark font-switzer font-semibold px-8 py-3 rounded-sm text-sm uppercase tracking-wider"
-        >
-          Ver Portfolio
-        </motion.a>
+      <div className="relative z-10">
+        <HeroTextSelector activeIndex={activeIndex} onSelect={setActiveIndex} />
       </div>
     </section>
   )

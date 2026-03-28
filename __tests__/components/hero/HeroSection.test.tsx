@@ -6,59 +6,34 @@ const { mockUseReducedMotion } = vi.hoisted(() => ({
 }))
 
 vi.mock('motion/react', () => ({
-  motion: {
-    div: ({ children, ...props }: React.HTMLAttributes<HTMLDivElement> & { children?: React.ReactNode }) => (
-      <div {...props}>{children}</div>
-    ),
-    span: ({ children, ...props }: React.HTMLAttributes<HTMLSpanElement> & { children?: React.ReactNode }) => (
-      <span {...props}>{children}</span>
-    ),
-    section: ({ children, ...props }: React.HTMLAttributes<HTMLElement> & { children?: React.ReactNode }) => (
-      <section {...props}>{children}</section>
-    ),
-    p: ({ children, ...props }: React.HTMLAttributes<HTMLParagraphElement> & { children?: React.ReactNode }) => (
-      <p {...props}>{children}</p>
-    ),
-    a: ({ children, ...props }: React.AnchorHTMLAttributes<HTMLAnchorElement> & { children?: React.ReactNode }) => (
-      <a {...props}>{children}</a>
-    ),
-  },
-  AnimatePresence: ({ children }: { children: React.ReactNode }) => <>{children}</>,
   useReducedMotion: mockUseReducedMotion,
-  useInView: vi.fn(() => true),
 }))
 
 vi.mock('@/components/hero/HeroTextSelector', () => ({
-  HeroTextSelector: () => <span data-testid="hero-text-selector">A Criação</span>,
+  HeroTextSelector: ({ activeIndex }: { activeIndex: number; onSelect: (i: number) => void }) => (
+    <span data-testid="hero-text-selector" data-active={activeIndex}>HeroTextSelector</span>
+  ),
 }))
 
 import { HeroSection } from '@/components/hero/HeroSection'
 
 describe('HeroSection', () => {
-  it('renders video element', () => {
+  it('renders the dark background', () => {
     render(<HeroSection />)
-    const video = document.querySelector('video')
-    expect(video).toBeTruthy()
-    expect(video?.autoplay).toBe(true)
-    expect(video?.muted).toBe(true)
-    expect(video?.loop).toBe(true)
+    const section = document.querySelector('section')
+    expect(section).toBeTruthy()
   })
 
-  it("renders CTA button with 'Ver Portfolio' text", () => {
+  it('renders HeroTextSelector with initial activeIndex 1', () => {
     render(<HeroSection />)
-    const cta = screen.getByRole('link', { name: /ver portfolio/i })
-    expect(cta).toBeTruthy()
-    expect(cta.getAttribute('href')).toBe('#portfolio')
+    const selector = screen.getByTestId('hero-text-selector')
+    expect(selector).toBeTruthy()
+    expect(selector.getAttribute('data-active')).toBe('1')
   })
 
-  it('renders tagline with MC.', () => {
+  it('renders section with min-h-screen', () => {
     render(<HeroSection />)
-    expect(screen.getByText(/MC\./)).toBeTruthy()
-    expect(screen.getByText(/CONTADORA/)).toBeTruthy()
-  })
-
-  it('renders HeroTextSelector', () => {
-    render(<HeroSection />)
-    expect(screen.getByTestId('hero-text-selector')).toBeTruthy()
+    const section = document.querySelector('section')
+    expect(section?.className).toContain('min-h-screen')
   })
 })

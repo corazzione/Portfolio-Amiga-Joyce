@@ -1,7 +1,5 @@
 import { HeroSection } from '@/components/hero/HeroSection'
-import { PhotoStripSection } from '@/components/sections/PhotoStripSection'
 import { ManifestoSection } from '@/components/sections/ManifestoSection'
-import { ProofStripSection } from '@/components/sections/ProofStripSection'
 import { ServicesSection } from '@/components/sections/ServicesSection'
 import { ProcessSection } from '@/components/sections/ProcessSection'
 import { BentoSection } from '@/components/sections/BentoSection'
@@ -16,9 +14,7 @@ export default function Home() {
   return (
     <main>
       <HeroSection />
-      <PhotoStripSection />
       <ManifestoSection />
-      <ProofStripSection />
       <ServicesSection />
       <ProcessSection />
       <BentoSection />
