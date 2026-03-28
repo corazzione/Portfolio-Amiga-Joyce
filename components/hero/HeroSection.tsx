@@ -10,12 +10,13 @@ export function HeroSection() {
     <section className="relative h-screen flex flex-col items-center justify-center overflow-hidden">
       {/* Background: dark gradient + video element */}
       <div className="absolute inset-0 bg-gradient-to-b from-dark via-dark/90 to-dark">
+        {/* Video: self-host on Vercel Blob or Cloudinary, set NEXT_PUBLIC_VIDEO_URL env var */}
+        {/* Example: <video src={process.env.NEXT_PUBLIC_VIDEO_URL} autoPlay muted loop playsInline /> */}
         <video
           autoPlay
           muted
           loop
           playsInline
-          src=""
           className="absolute inset-0 w-full h-full object-cover"
         />
       </div>

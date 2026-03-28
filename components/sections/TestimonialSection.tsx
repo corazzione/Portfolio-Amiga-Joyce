@@ -33,6 +33,8 @@ export function TestimonialSection() {
 
   return (
     <section id="testimonials" className="relative bg-dark min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Video: self-host on Vercel Blob or Cloudinary, set NEXT_PUBLIC_VIDEO_URL env var */}
+      {/* Example: <video src={process.env.NEXT_PUBLIC_VIDEO_URL} autoPlay muted loop playsInline /> */}
       {/* Video background — no src attribute to avoid blank frame flash */}
       <video
         autoPlay
