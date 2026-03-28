@@ -18,11 +18,11 @@
 
 ### Navigation
 
-- [ ] **NAV-01**: Top navbar shows "MC." logo left and "Uma Contadora de Histórias Visual" tagline, with a "Contato" button right; transparent over hero, solid on scroll
-- [ ] **NAV-02**: Fixed bottom bar persists on all pages with: "Menu+" gold pill button left, "Corazón" white text center, on black background
-- [ ] **NAV-03**: Clicking "Menu+" opens a fullscreen dark overlay menu with animated entrance (slide/fade)
-- [ ] **NAV-04**: Fullscreen menu overlay shows navigation links and closes on link click or close button
-- [ ] **NAV-05**: Mobile menu overlay covers the full viewport with vertical navigation layout
+- [x] **NAV-01**: Top navbar shows "MC." logo left and "Uma Contadora de Histórias Visual" tagline, with a "Contato" button right; transparent over hero, solid on scroll
+- [x] **NAV-02**: Fixed bottom bar persists on all pages with: "Menu+" gold pill button left, "Corazón" white text center, on black background
+- [x] **NAV-03**: Clicking "Menu+" opens a fullscreen dark overlay menu with animated entrance (slide/fade)
+- [x] **NAV-04**: Fullscreen menu overlay shows navigation links and closes on link click or close button
+- [x] **NAV-05**: Mobile menu overlay covers the full viewport with vertical navigation layout
 
 ### Hero
 

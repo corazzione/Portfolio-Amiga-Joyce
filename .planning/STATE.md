@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-stopped_at: Phase 2 context gathered
-last_updated: "2026-03-28T05:39:13.007Z"
+stopped_at: "Completed 02-01-PLAN.md"
+last_updated: "2026-03-28T06:15:38.000Z"
 progress:
   total_phases: 7
   completed_phases: 1
-  total_plans: 2
-  completed_plans: 2
+  total_plans: 4
+  completed_plans: 3
 ---
 
 # Project State
@@ -19,31 +19,32 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-28)
 
 **Core value:** Visitors feel the quality and aesthetic of Joyce's work through the site itself — every scroll, reveal, and interaction communicates premium visual storytelling before they've seen a single photo.
-**Current focus:** Phase 01 — foundation (COMPLETE)
+**Current focus:** Phase 02 — navigation-shell
 
 ## Current Position
 
-Phase: 01 (foundation) — COMPLETE
-Plan: 2 of 2 — COMPLETE
+Phase: 02 (navigation-shell) — EXECUTING
+Plan: 2 of 2
 
 ## Performance Metrics
 
 **Velocity:**
 
-- Total plans completed: 2
-- Average duration: 4 min
-- Total execution time: 0.13 hours
+- Total plans completed: 3
+- Average duration: 3 min
+- Total execution time: 0.15 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 01-foundation | 2/2 | 8 min | 4 min |
+| 02-navigation-shell | 1/2 | 1 min | 1 min |
 
 **Recent Trend:**
 
-- Last 5 plans: 4 min
-- Trend: baseline
+- Last 5 plans: 1 min
+- Trend: fast
 
 *Updated after each plan completion*
 
@@ -65,6 +66,9 @@ Recent decisions affecting current work:
 - [01-02]: lib/data.ts is a single file (not lib/data/*.ts) — plan spec overrides architecture doc; easy to split later
 - [01-02]: RevealWrapper useInView margin '-40px' — triggers slightly before element fully enters viewport
 - [01-02]: StaggerChildren exports both container and StaggerItem child — flexible composition pattern
+- [02-01]: AnimatePresence lives in BottomBar (always-mounted parent) — exit animations require this pattern
+- [02-01]: Overlay nav links use button + useRouter.push to guarantee overlay closes before navigation
+- [02-01]: Scroll listener uses functional update pattern to avoid re-renders when value unchanged
 
 ### Pending Todos
 
@@ -78,6 +82,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-28T05:39:13.005Z
-Stopped at: Phase 2 context gathered
-Resume file: .planning/phases/02-navigation-shell/02-CONTEXT.md
+Last session: 2026-03-28T06:15:38.000Z
+Stopped at: Completed 02-01-PLAN.md
+Resume file: .planning/phases/02-navigation-shell/02-02-PLAN.md
