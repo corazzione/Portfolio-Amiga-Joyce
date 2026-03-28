@@ -1,8 +1,8 @@
 import { processSteps } from '@/lib/data'
 import { RevealWrapper } from '@/components/motion/RevealWrapper'
 
-const topClasses = ['top-16', 'top-20', 'top-24', 'top-28', 'top-32', 'top-36']
-const zClasses = ['z-[10]', 'z-[20]', 'z-[30]', 'z-[40]', 'z-[50]', 'z-[60]']
+const topClasses = ['sm:top-16', 'sm:top-20', 'sm:top-24', 'sm:top-28', 'sm:top-32', 'sm:top-36']
+const zClasses = ['sm:z-[10]', 'sm:z-[20]', 'sm:z-[30]', 'sm:z-[40]', 'sm:z-[50]', 'sm:z-[60]']
 const rotations = [
   'rotate-[1deg]', 'rotate-[-0.5deg]', 'rotate-[0.5deg]',
   'rotate-[-1deg]', 'rotate-[0.5deg]', 'rotate-[-0.5deg]',
@@ -13,15 +13,15 @@ export function ProcessSection() {
     <section id="process" className="relative bg-bg py-24">
       <div className="max-w-2xl mx-auto px-6">
         <RevealWrapper>
-          <h2 className="font-switzer font-bold text-4xl text-dark mb-12 text-center">
+          <h2 className="font-switzer font-bold text-2xl sm:text-4xl text-dark mb-12 text-center">
             Um Caminho Claro para Visuais Excepcionais
           </h2>
         </RevealWrapper>
-        <div className="relative min-h-[300vh]">
+        <div className="relative sm:min-h-[300vh]">
           {processSteps.map((step, i) => (
             <div
               key={step.id}
-              className={`sticky ${topClasses[i]} ${zClasses[i]} ${rotations[i]} mb-6 bg-white rounded-2xl p-8 shadow-lg transition-shadow`}
+              className={`sm:sticky ${topClasses[i]} ${zClasses[i]} ${rotations[i]} mb-6 bg-white rounded-2xl p-8 shadow-lg transition-shadow`}
             >
               <span className="absolute top-6 right-8 text-gold font-switzer font-bold text-xs tracking-widest">
                 {String(step.id).padStart(2, '0')}

@@ -8,6 +8,7 @@ export function TestimonialSection() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const prefersReduced = useReducedMotion()
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
+  const touchStartX = useRef<number>(0)
 
   const startInterval = useCallback(() => {
     if (intervalRef.current) clearInterval(intervalRef.current)
@@ -44,7 +45,15 @@ export function TestimonialSection() {
       <div className="absolute inset-0 bg-dark/30" />
 
       {/* Content container */}
-      <div className="relative z-10 flex flex-col items-center gap-8 px-6">
+      <div
+        className="relative z-10 flex flex-col items-center gap-8 px-6"
+        onTouchStart={(e) => { touchStartX.current = e.touches[0].clientX }}
+        onTouchEnd={(e) => {
+          const delta = e.changedTouches[0].clientX - touchStartX.current
+          if (delta < -50) handleDotClick((currentIndex + 1) % testimonials.length)
+          if (delta > 50) handleDotClick((currentIndex - 1 + testimonials.length) % testimonials.length)
+        }}
+      >
         {/* Floating white card with AnimatePresence */}
         <AnimatePresence mode="wait">
           <motion.div
