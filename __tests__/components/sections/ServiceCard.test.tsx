@@ -25,11 +25,28 @@ vi.mock('@/components/motion/StaggerChildren', () => ({
   StaggerItem: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
 }))
 
-// TODO: uncomment when component exists
-// import { ServiceCard } from '@/components/sections/ServiceCard'
+import { ServiceCard } from '@/components/sections/ServiceCard'
+
+const mockService = {
+  id: 'test',
+  title: 'Test Service',
+  description: 'Test desc',
+  icon: '📷',
+}
 
 describe('ServiceCard', () => {
-  it.todo('renders service title')
-  it.todo('renders service description')
-  it.todo('renders service icon')
+  it('renders service title', () => {
+    render(<ServiceCard service={mockService} />)
+    expect(screen.getByText('Test Service')).toBeTruthy()
+  })
+
+  it('renders service description', () => {
+    render(<ServiceCard service={mockService} />)
+    expect(screen.getByText('Test desc')).toBeTruthy()
+  })
+
+  it('renders service icon', () => {
+    render(<ServiceCard service={mockService} />)
+    expect(screen.getByText('📷')).toBeTruthy()
+  })
 })

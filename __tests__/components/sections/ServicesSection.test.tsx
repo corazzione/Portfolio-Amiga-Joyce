@@ -29,11 +29,23 @@ vi.mock('@/components/sections/ServiceCard', () => ({
   ServiceCard: ({ service }: { service: { title: string } }) => <div data-testid="service-card">{service.title}</div>,
 }))
 
-// TODO: uncomment when component exists
-// import { ServicesSection } from '@/components/sections/ServicesSection'
+import { ServicesSection } from '@/components/sections/ServicesSection'
 
 describe('ServicesSection', () => {
-  it.todo('renders Meus Servicos heading')
-  it.todo('renders 7 service cards from data')
-  it.todo('renders 1 photo card placeholder')
+  it('renders Meus Servicos heading', () => {
+    render(<ServicesSection />)
+    expect(screen.getByText('Meus Servicos')).toBeTruthy()
+  })
+
+  it('renders 7 service cards from data', () => {
+    render(<ServicesSection />)
+    const cards = screen.getAllByTestId('service-card')
+    expect(cards.length).toBe(7)
+  })
+
+  it('renders 1 photo card placeholder', () => {
+    const { container } = render(<ServicesSection />)
+    const photoCard = container.querySelector('.bg-dark.rounded-2xl')
+    expect(photoCard).toBeTruthy()
+  })
 })
