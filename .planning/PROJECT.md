@@ -25,21 +25,19 @@ Visitors feel the quality and aesthetic of Joyce's work through the site itself 
 - ✓ RevealWrapper upgraded: variant prop ("fadeUp"|"scaleIn") + useReducedMotion() guard — validated in Phase 3: Hero + Animation System
 - ✓ StaggerChildren upgraded: useReducedMotion() guard — validated in Phase 3: Hero + Animation System
 - ✓ Vitest test infrastructure (vitest.config.ts, 4 test files, 13 tests green) — validated in Phase 3: Hero + Animation System
+- ✓ All 10 homepage sections (PhotoStrip, Manifesto, ProofStrip, Services, Portfolio, Blog, FAQ, CTA, Footer) in components/sections/ — validated in Phase 4: Static Content Sections
+- ✓ ServiceCard + PortfolioCard with whileHover scale (ANIM-05), FAQSection useState accordion, 40 Vitest tests green — validated in Phase 4: Static Content Sections
 
 ### Active
 
-- [ ] Fixed bottom navigation bar (black bg, "Menu+" gold pill, "Corazón" center) with fullscreen dark overlay menu
-- [ ] Horizontal thumbnail strip + centered manifesto/statement text
-- [ ] CTA/proof section with avatar cluster and client logos (theo, Amsterdam, luminous, MILANO)
-- [ ] "Meus Serviços" — 4-column white card grid (7 services + 1 photo)
-- [ ] "Um Caminho Claro para Visuais Excepcionais" — 6 sticky stacked process cards with paper-like rotation
-- [ ] "Construído na Confiança, Movido pela Qualidade" — asymmetric bento trust grid
-- [ ] "Trabalhos Selecionados" — 3-column portfolio preview grid
-- [ ] Dark cinematic testimonial section with looping background video and floating white review cards (auto-advance 5s, dot nav)
-- [ ] "Últimas Histórias" — 3-card blog section with horizontal line separators
-- [ ] FAQ section ("Alguma Dúvida?") — title left, accordion right, 4 questions in Portuguese
-- [ ] CTA section with standing model figure emerging from bottom
-- [ ] Footer — white card on beige bg, Corazón brand, social links, legal links, "Criado por Markus Corazzione", "MC. © 2026"
+- [ ] "Um Caminho Claro para Visuais Excepcionais" — 6 sticky stacked process cards with paper-like rotation (Phase 5)
+- [ ] "Construído na Confiança, Movido pela Qualidade" — asymmetric bento trust grid (Phase 5)
+- [ ] Dark cinematic testimonial section with looping background video and floating white review cards (auto-advance 5s, dot nav) (Phase 5)
+- [ ] /contato page with contact form (Phase 6)
+- [ ] /portfolio page with portfolio listing (Phase 6)
+- [ ] /privacidade page (Phase 6)
+- [ ] Mobile responsive layout pass (Phase 7)
+- [ ] Lighthouse performance ≥ 85 on Vercel (Phase 7)
 - [ ] Scroll-reveal animation system (opacity 0→1, y 24→0, 0.8s, cubic-bezier(0.22,1,0.36,1)) across all sections
 - [ ] Staggered children animations for image rows, service cards, portfolio cards, blog cards
 - [ ] Subtle scale-in for featured images/cards (scale 0.985→1)
