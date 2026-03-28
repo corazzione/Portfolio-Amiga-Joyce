@@ -64,7 +64,7 @@ Plans:
   3. The text selector cycles through "A Criação / Videografia / Fotografia" with smooth animated transitions driven by scroll or auto-advance
   4. Any element wrapped in `RevealWrapper` fades in from y=24 to y=0 at 0.8s cubic-bezier(0.22,1,0.36,1) when it enters the viewport; elements wrapped in `StaggerChildren` stagger at 0.1s intervals
   5. All animations produce zero motion when `prefers-reduced-motion` is enabled in the OS
-**Plans:** 2 plans
+**Plans:** 1/2 plans executed
 
 Plans:
 - [ ] 03-01-PLAN.md — Install Vitest, upgrade RevealWrapper + StaggerChildren with variant prop and reduced-motion guard, create HeroTextSelector
@@ -126,7 +126,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7
 |-------|----------------|--------|-----------|
 | 1. Foundation | 2/2 | Complete   | 2026-03-28 |
 | 2. Navigation Shell | 2/2 | Complete   | 2026-03-28 |
-| 3. Hero + Animation System | 0/2 | Not started | - |
+| 3. Hero + Animation System | 1/2 | In Progress|  |
 | 4. Static Content Sections | 0/TBD | Not started | - |
 | 5. Complex Interactive Sections | 0/TBD | Not started | - |
 | 6. Additional Pages | 0/TBD | Not started | - |

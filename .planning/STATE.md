@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: executing
-stopped_at: "Completed 02-02-PLAN.md"
-last_updated: "2026-03-28T05:59:12.000Z"
+status: unknown
+stopped_at: Completed 03-01-PLAN.md
+last_updated: "2026-03-28T03:27:00.000Z"
 progress:
   total_phases: 7
   completed_phases: 2
-  total_plans: 4
-  completed_plans: 4
+  total_plans: 6
+  completed_plans: 5
 ---
 
 # Project State
@@ -19,12 +19,12 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-28)
 
 **Core value:** Visitors feel the quality and aesthetic of Joyce's work through the site itself — every scroll, reveal, and interaction communicates premium visual storytelling before they've seen a single photo.
-**Current focus:** Phase 03 — hero-landing
+**Current focus:** Phase 03 — hero-animation-system
 
 ## Current Position
 
-Phase: 03 (hero-landing) — NEXT
-Plan: 1 of N
+Phase: 03 (hero-animation-system) — EXECUTING
+Plan: 2 of 2
 
 ## Performance Metrics
 
@@ -40,6 +40,7 @@ Plan: 1 of N
 |-------|-------|-------|----------|
 | 01-foundation | 2/2 | 8 min | 4 min |
 | 02-navigation-shell | 2/2 | 4 min | 2 min |
+| 03-hero-animation-system | 1/2 | 3 min | 3 min |
 
 **Recent Trend:**
 
@@ -71,6 +72,9 @@ Recent decisions affecting current work:
 - [02-01]: Scroll listener uses functional update pattern to avoid re-renders when value unchanged
 - [02-02]: Body padding uses plain CSS padding-bottom: 60px — not Tailwind arbitrary @apply pb-[60px] which can be unreliable
 - [02-02]: layout.tsx remains a Server Component — TopNav and BottomBar self-declare 'use client' as Client Component boundaries
+- [03-01]: vi.hoisted() required for mock variables used inside vi.mock() factory — Vitest hoists vi.mock() before const declarations
+- [03-01]: HeroSection.test.tsx uses it.todo() stubs — HeroSection component created in Plan 03-02, expected to fail until then
+- [03-01]: AnimatePresence key uses text string not index — required for proper exit animation triggering in HeroTextSelector
 
 ### Pending Todos
 
@@ -84,6 +88,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-28T05:59:12.000Z
-Stopped at: Completed 02-02-PLAN.md
-Resume file: .planning/phases/03-hero-landing/03-01-PLAN.md
+Last session: 2026-03-28T03:27:00.000Z
+Stopped at: Completed 03-01-PLAN.md
+Resume file: .planning/phases/03-hero-animation-system/03-02-PLAN.md

@@ -29,7 +29,7 @@
 - [ ] **HERO-01**: Hero section is full-screen (100vh) with a looping background video (muted, autoplay, playsInline)
 - [ ] **HERO-02**: Hero displays the "MC. // UMA CONTADORA DE HISTÓRIAS VISUAL" logo/tagline overlay
 - [ ] **HERO-03**: Hero has a mustard CTA button ("Ver Portfólio" or equivalent) in the top-right area
-- [ ] **HERO-04**: Hero features an animated vertical text selector cycling through "A Criação / Videografia / Fotografia" — driven by scroll position or auto-advance
+- [x] **HERO-04**: Hero features an animated vertical text selector cycling through "A Criação / Videografia / Fotografia" — driven by scroll position or auto-advance
 - [ ] **HERO-05**: Hero text and CTA animate in on page load (not scroll-triggered)
 
 ### Sections — Content
@@ -56,12 +56,12 @@
 
 ### Animation System
 
-- [ ] **ANIM-01**: All content sections reveal on scroll using fade-in + translateY (opacity 0→1, y 24→0, duration 0.8s, cubic-bezier(0.22,1,0.36,1))
-- [ ] **ANIM-02**: Image rows, service cards, portfolio cards, and blog cards stagger-reveal with 0.1s delay between children
-- [ ] **ANIM-03**: Featured images and cards have subtle scale-in on reveal (scale 0.985→1)
+- [x] **ANIM-01**: All content sections reveal on scroll using fade-in + translateY (opacity 0→1, y 24→0, duration 0.8s, cubic-bezier(0.22,1,0.36,1))
+- [x] **ANIM-02**: Image rows, service cards, portfolio cards, and blog cards stagger-reveal with 0.1s delay between children
+- [x] **ANIM-03**: Featured images and cards have subtle scale-in on reveal (scale 0.985→1)
 - [ ] **ANIM-04**: Buttons have gentle hover state (scale, color, or opacity transition)
 - [ ] **ANIM-05**: Cards and images have subtle hover elevation/scale on mouse enter
-- [ ] **ANIM-06**: All animations respect `prefers-reduced-motion` — zero motion in reduced-motion mode
+- [x] **ANIM-06**: All animations respect `prefers-reduced-motion` — zero motion in reduced-motion mode
 
 ### Responsive
 
