@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
-import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 
 const NAV_LINKS = [

@@ -40,7 +40,7 @@ export function TopNav() {
       >
         <span>MC.</span>
         <span className={cn('font-normal mx-1', scrolled ? 'text-white/40' : 'text-dark/40')}>
-          //
+          {'//'}
         </span>
         <span
           className={cn(

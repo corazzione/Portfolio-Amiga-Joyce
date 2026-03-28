@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { switzer, publicSans } from './fonts'
 import './globals.css'
+import { TopNav } from '@/components/layout/TopNav'
+import { BottomBar } from '@/components/layout/BottomBar'
 
 export const metadata: Metadata = {
   title: 'Corazon - Fotografia & Videografia',
@@ -14,7 +16,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR" className={`${switzer.variable} ${publicSans.variable}`}>
-      <body>{children}</body>
+      <body>
+        <TopNav />
+        {children}
+        <BottomBar />
+      </body>
     </html>
   )
 }
