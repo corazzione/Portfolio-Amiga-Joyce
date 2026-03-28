@@ -12,7 +12,14 @@ Visitors feel the quality and aesthetic of Joyce's work through the site itself 
 
 ### Validated
 
-(None yet — ship to validate)
+- ✓ Next.js 14 App Router scaffold with TypeScript, Tailwind v3.4, Motion v12 — validated in Phase 1: Foundation
+- ✓ Switzer variable font self-hosted via next/font/local (zero FOUT) — validated in Phase 1: Foundation
+- ✓ Public Sans via next/font/google — validated in Phase 1: Foundation
+- ✓ Tailwind design tokens (bg #EFE8DC, gold #C8973A, dark #1a1a1a, fontFamily.switzer, fontFamily.sans) — validated in Phase 1: Foundation
+- ✓ Animation variants (fadeUp, scaleIn, stagger, spring) in lib/animation-variants.ts — validated in Phase 1: Foundation
+- ✓ RevealWrapper + StaggerChildren client components in components/motion/ — validated in Phase 1: Foundation
+- ✓ Typed static content stubs in lib/data.ts (services, process steps, testimonials, blog posts, FAQ, logos) — validated in Phase 1: Foundation
+- ✓ vercel.json with font caching and security headers — validated in Phase 1: Foundation
 
 ### Active
 
@@ -79,4 +86,4 @@ Visitors feel the quality and aesthetic of Joyce's work through the site itself 
 | index.html as reference | Complete visual spec already exists — don't reinvent, translate to React | — Pending |
 
 ---
-*Last updated: 2026-03-28 after initialization*
+*Last updated: 2026-03-28 after Phase 1: Foundation complete*
