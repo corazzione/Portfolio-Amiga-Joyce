@@ -75,10 +75,10 @@
 
 ### Pages
 
-- [ ] **PAGE-01**: `/` (home) — full single-page portfolio experience with all 12 sections
+- [x] **PAGE-01**: `/` (home) — full single-page portfolio experience with all 12 sections
 - [x] **PAGE-02**: `/portfolio` — portfolio listing page with filterable or categorized work grid
 - [x] **PAGE-03**: `/contato` — contact page with a form (name, email, message, subject) that submits via email service (Formspree or Resend serverless action)
-- [ ] **PAGE-04**: `/privacidade` — privacy/cookies policy page with LGPD-compliant content
+- [x] **PAGE-04**: `/privacidade` — privacy/cookies policy page with LGPD-compliant content
 
 ### Performance & Deployment
 
