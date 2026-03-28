@@ -25,10 +25,24 @@ vi.mock('@/components/motion/StaggerChildren', () => ({
   StaggerItem: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
 }))
 
-// TODO: uncomment when component exists
-// import { BlogSection } from '@/components/sections/BlogSection'
+import { BlogSection } from '@/components/sections/BlogSection'
 
 describe('BlogSection', () => {
-  it.todo('renders 3 blog post titles')
-  it.todo('renders hr separators between posts')
+  it('renders Ultimas Historias heading', () => {
+    render(<BlogSection />)
+    expect(screen.getByText('Ultimas Historias')).toBeInTheDocument()
+  })
+
+  it('renders 3 blog post titles', () => {
+    render(<BlogSection />)
+    expect(screen.getByText('Por Trás das Lentes de um Filme de Marca')).toBeInTheDocument()
+    expect(screen.getByText('O Poder da Luz Natural')).toBeInTheDocument()
+    expect(screen.getByText('Capturando Emoção na Fotografia de Retratos')).toBeInTheDocument()
+  })
+
+  it('renders hr separators between posts (exactly 2)', () => {
+    const { container } = render(<BlogSection />)
+    const hrs = container.querySelectorAll('hr')
+    expect(hrs).toHaveLength(2)
+  })
 })
