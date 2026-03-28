@@ -29,10 +29,27 @@ vi.mock('@/components/sections/PortfolioCard', () => ({
   PortfolioCard: ({ caption }: { caption: string }) => <div data-testid="portfolio-card">{caption}</div>,
 }))
 
-// TODO: uncomment when component exists
-// import { PortfolioSection } from '@/components/sections/PortfolioSection'
+import { PortfolioSection } from '@/components/sections/PortfolioSection'
 
 describe('PortfolioSection', () => {
-  it.todo('renders Trabalhos Selecionados heading')
-  it.todo('renders 6 portfolio items')
+  it('renders Trabalhos Selecionados heading', () => {
+    render(<PortfolioSection />)
+    expect(screen.getByText('Trabalhos Selecionados')).toBeInTheDocument()
+  })
+
+  it('renders 6 portfolio items', () => {
+    render(<PortfolioSection />)
+    const cards = screen.getAllByTestId('portfolio-card')
+    expect(cards).toHaveLength(6)
+  })
+
+  it('renders all portfolio captions', () => {
+    render(<PortfolioSection />)
+    expect(screen.getByText('Retrato Editorial')).toBeInTheDocument()
+    expect(screen.getByText('Campanha de Marca')).toBeInTheDocument()
+    expect(screen.getByText('Cobertura de Evento')).toBeInTheDocument()
+    expect(screen.getByText('Lifestyle & Produto')).toBeInTheDocument()
+    expect(screen.getByText('Videografia')).toBeInTheDocument()
+    expect(screen.getByText('Documental')).toBeInTheDocument()
+  })
 })
