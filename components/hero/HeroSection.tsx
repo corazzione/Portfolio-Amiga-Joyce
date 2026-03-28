@@ -1,10 +1,15 @@
 'use client'
 
 import { useRef, useState, useEffect, useCallback } from 'react'
-import { useReducedMotion } from 'motion/react'
+import { motion, useReducedMotion } from 'motion/react'
 import { HeroTextSelector } from '@/components/hero/HeroTextSelector'
 
 const TEXTS_COUNT = 3
+const HERO_IMAGES = [
+  'https://framerusercontent.com/images/SHpm5JLT9X16LG28VxAgzi1jKvM.png?width=900&height=1200',
+  'https://framerusercontent.com/images/opPcTuyGGMldvhH8CbZNJCv8r0M.png?width=900&height=1200',
+  'https://framerusercontent.com/images/QJuz54nmjbsesqGJkdNUrJSuRgs.png?width=960&height=1200',
+] as const
 
 export function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null)
@@ -34,10 +39,29 @@ export function HeroSection() {
       className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
       style={{ padding: '80px 24px 100px' }}
     >
-      {/* Background: photo/image goes here */}
       <div className="absolute inset-0 bg-dark">
-        {/* Image: self-host and set NEXT_PUBLIC_HERO_IMAGE_URL env var */}
-        {/* <img src={process.env.NEXT_PUBLIC_HERO_IMAGE_URL} alt="" className="absolute inset-0 w-full h-full object-cover" /> */}
+        {HERO_IMAGES.map((image, index) => {
+          const isActive = index === activeIndex
+
+          return (
+            <motion.img
+              key={image}
+              src={image}
+              alt=""
+              className="absolute inset-0 h-full w-full object-cover"
+              initial={false}
+              animate={{
+                opacity: isActive ? 1 : 0,
+                scale: isActive ? 1.04 : 1,
+              }}
+              transition={
+                prefersReduced
+                  ? { duration: 0 }
+                  : { duration: 0.6, ease: [0.22, 1, 0.36, 1] }
+              }
+            />
+          )
+        })}
       </div>
 
       {/* Overlay for text contrast */}

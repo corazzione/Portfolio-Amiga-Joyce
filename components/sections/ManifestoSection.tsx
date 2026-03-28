@@ -32,7 +32,7 @@ export function ManifestoSection() {
                 'radial-gradient(46% 266%, #000 0%, #000 51.95%, transparent 100%)',
             }}
           >
-            <div className="flex items-start justify-center gap-4 sm:gap-5 lg:gap-[21.48px]">
+            <div className="flex items-start justify-center gap-3 sm:gap-5 lg:gap-[21.48px]">
               {showcaseImages.map((image, index) => {
                 const isMain = index === 2
 
@@ -60,11 +60,7 @@ export function ManifestoSection() {
                 return (
                   <div
                     key={image}
-                    className={`relative shrink-0 ${index === 0 || index === 4 ? 'hidden lg:block' : ''}`}
-                    style={{
-                      width: '257px',
-                      height: '243px',
-                    }}
+                    className={`relative h-[180px] w-[31vw] max-w-[120px] shrink-0 sm:h-[243px] sm:w-[257px] sm:max-w-none ${index === 0 || index === 4 ? 'hidden lg:block' : ''}`}
                   >
                     <img
                       src={image}
@@ -86,15 +82,15 @@ export function ManifestoSection() {
           </h2>
 
           <div className="flex flex-col items-center gap-8 lg:gap-7">
-            <div className="flex flex-col items-center gap-6 sm:flex-row sm:gap-8">
+            <div className="flex w-full flex-col items-center gap-6 sm:flex-row sm:justify-center sm:gap-8">
               <a
                 href="/portfolio"
-                className="flex h-14 min-w-fit items-center justify-center bg-[#d19f41] px-10 font-switzer text-[15px] font-bold uppercase tracking-[-0.02em] text-[#0a0805] transition-opacity hover:opacity-90"
+                className="flex h-14 w-full items-center justify-center bg-[#d19f41] px-6 text-center font-switzer text-[15px] font-bold uppercase tracking-[-0.02em] text-[#0a0805] transition-opacity hover:opacity-90 sm:w-auto sm:min-w-fit sm:px-10"
               >
                 Meu Portfolio
               </a>
 
-              <div className="flex items-end gap-6">
+              <div className="flex flex-wrap items-center justify-center gap-4 sm:flex-nowrap sm:items-end sm:gap-6">
                 <div className="flex pl-[11px]">
                   {avatarImages.map((image) => (
                     <div
@@ -110,7 +106,7 @@ export function ManifestoSection() {
                   ))}
                 </div>
 
-                <div className="flex flex-col items-start gap-1">
+                <div className="flex flex-col items-center gap-1 sm:items-start">
                   <div className="flex items-center gap-[2px] text-[#0a0805]">
                     {Array.from({ length: 5 }).map((_, index) => (
                       <span key={index} className="text-[13px] leading-none">
@@ -118,7 +114,7 @@ export function ManifestoSection() {
                       </span>
                     ))}
                   </div>
-                  <p className="font-switzer text-sm font-semibold tracking-[-0.02em] text-[#0a0805]">
+                  <p className="text-center font-switzer text-sm font-semibold tracking-[-0.02em] text-[#0a0805] sm:text-left">
                     540+ clientes pelo mundo
                   </p>
                 </div>
@@ -151,7 +147,6 @@ export function ManifestoSection() {
             className="relative w-full max-w-[420px] overflow-visible"
             style={{
               height: '289px',
-              transform: 'translateY(15px) scale(0.9)',
             }}
           >
             <div className="absolute inset-x-0 top-0 flex justify-center">
@@ -168,7 +163,7 @@ export function ManifestoSection() {
             </div>
 
             <div
-              className="absolute bottom-0 left-[-56px] right-[-57px] h-44 backdrop-blur-[10px]"
+              className="absolute bottom-0 left-[-18px] right-[-18px] h-44 backdrop-blur-[10px] sm:left-[-56px] sm:right-[-57px]"
               style={{
                 background:
                   'linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.01) 100%)',

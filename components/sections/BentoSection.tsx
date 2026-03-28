@@ -16,15 +16,15 @@ const collabAvatars = [
 const qualityShots = [
   {
     src: 'https://framerusercontent.com/images/KdNoZZk3OD1MqJJoueIcpok5Rvs.png?width=1200&height=1200',
-    className: 'left-[39px] top-[77px] -rotate-[9deg]',
+    className: 'left-[14px] top-[82px] -rotate-[9deg] sm:left-[26px] lg:left-[39px] lg:top-[77px]',
   },
   {
     src: 'https://framerusercontent.com/images/fgrNiJOSDiVEweLnajj8UVqX98.png?width=675&height=1200',
-    className: 'right-[52px] top-[77px] rotate-[14deg]',
+    className: 'right-[14px] top-[82px] rotate-[14deg] sm:right-[26px] lg:right-[52px] lg:top-[77px]',
   },
   {
     src: 'https://framerusercontent.com/images/XyiWfo5UyYYA3ohWYdLz5EAbrY.png?width=1200&height=904',
-    className: 'left-1/2 top-[41px] -translate-x-1/2 rotate-[9deg]',
+    className: 'left-1/2 top-[26px] -translate-x-1/2 rotate-[9deg] lg:top-[41px]',
   },
 ] as const
 
@@ -113,7 +113,7 @@ export function BentoSection() {
                     Colaborações Fluidas
                   </h3>
 
-                  <div className="flex items-center gap-6">
+                  <div className="flex flex-col items-center gap-4 sm:flex-row sm:gap-6">
                     <div className="flex pl-[11px]">
                       {collabAvatars.map((src, index) => (
                         <img
@@ -125,13 +125,13 @@ export function BentoSection() {
                       ))}
                     </div>
 
-                    <div className="flex flex-col items-start gap-1">
+                    <div className="flex flex-col items-center gap-1 sm:items-start">
                       <div className="flex gap-[2px] text-[#d19f41]">
                         {Array.from({ length: 5 }).map((_, index) => (
                           <span key={index}>★</span>
                         ))}
                       </div>
-                      <p className="font-switzer text-sm font-semibold tracking-[-0.02em] text-[#0a0805]">
+                      <p className="text-center font-switzer text-sm font-semibold tracking-[-0.02em] text-[#0a0805] sm:text-left">
                         540+ clientes pelo mundo
                       </p>
                     </div>
@@ -146,7 +146,7 @@ export function BentoSection() {
                   Atenção aos Detalhes
                 </h3>
 
-                <div className="relative z-[1] mt-6 flex max-w-[420px] flex-wrap items-center justify-center gap-6">
+                <div className="relative z-[1] mt-6 flex max-w-[420px] flex-wrap items-center justify-center gap-4 sm:gap-6">
                   {detailItems.map((item) => (
                     <Chip key={item}>{item}</Chip>
                   ))}
@@ -181,7 +181,7 @@ export function BentoSection() {
                   {qualityShots.map((shot) => (
                     <div
                       key={shot.src}
-                      className={`absolute h-[154px] w-[148px] bg-white p-1 shadow-[0_0.711334px_2.9876px_-0.45px_rgba(0,0,0,0.07),0_1.93715px_8.13604px_-0.9px_rgba(0,0,0,0.07),0_4.25329px_17.8638px_-1.35px_rgba(0,0,0,0.07),0_9.44132px_39.6536px_-1.8px_rgba(0,0,0,0.07),0_24px_100.8px_-2.25px_rgba(0,0,0,0.08)] ${shot.className}`}
+                      className={`absolute h-[126px] w-[120px] bg-white p-1 shadow-[0_0.711334px_2.9876px_-0.45px_rgba(0,0,0,0.07),0_1.93715px_8.13604px_-0.9px_rgba(0,0,0,0.07),0_4.25329px_17.8638px_-1.35px_rgba(0,0,0,0.07),0_9.44132px_39.6536px_-1.8px_rgba(0,0,0,0.07),0_24px_100.8px_-2.25px_rgba(0,0,0,0.08)] sm:h-[140px] sm:w-[134px] lg:h-[154px] lg:w-[148px] ${shot.className}`}
                     >
                       <img
                         src={shot.src}
@@ -191,7 +191,7 @@ export function BentoSection() {
                     </div>
                   ))}
 
-                  <h3 className="absolute bottom-[35px] left-1/2 -translate-x-1/2 text-center font-switzer text-[22px] font-semibold leading-[1.2] tracking-[-0.02em] text-[#0a0805] sm:text-[32px]">
+                  <h3 className="absolute bottom-[26px] left-1/2 w-[90%] -translate-x-1/2 text-center font-switzer text-[20px] font-semibold leading-[1.2] tracking-[-0.02em] text-[#0a0805] sm:text-[26px] lg:bottom-[35px] lg:w-auto lg:text-[32px]">
                     Qualidade Consistente
                   </h3>
                 </div>
@@ -227,8 +227,8 @@ export function BentoSection() {
                   className="absolute inset-0 h-full w-full object-cover"
                 />
                 <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(84,84,84,0)_46.8468%,rgba(0,0,0,0.42)_100%)]" />
-                <div className="absolute bottom-[52px] left-[38px] z-[2] flex max-w-[205px] flex-col items-start gap-3">
-                  <h3 className="font-switzer text-[22px] font-semibold leading-[1.2] tracking-[-0.02em] text-white sm:text-[32px]">
+                <div className="absolute bottom-[26px] left-[20px] right-[20px] z-[2] flex max-w-[205px] flex-col items-start gap-3 sm:left-[30px] lg:bottom-[52px] lg:left-[38px] lg:right-auto">
+                  <h3 className="font-switzer text-[22px] font-semibold leading-[1.2] tracking-[-0.02em] text-white sm:text-[26px] lg:text-[32px]">
                     Abordagem Guiada por História
                   </h3>
                   <p className="font-sans text-sm font-normal leading-[1.2] tracking-[-0.01em] text-[#ffffffd9]">

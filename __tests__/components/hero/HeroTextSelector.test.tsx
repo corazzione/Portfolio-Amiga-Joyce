@@ -6,35 +6,47 @@ const mocks = vi.hoisted(() => ({
 }))
 
 vi.mock('motion/react', () => ({
+  motion: {
+    button: ({ children, ...props }: any) => (
+      <button {...props}>{children}</button>
+    ),
+  },
   useReducedMotion: mocks.useReducedMotion,
 }))
 
 import { HeroTextSelector } from '@/components/hero/HeroTextSelector'
 
 describe('HeroTextSelector', () => {
-  it('renders all three text options', () => {
+  it('renders the 3 circular positions around the active item', () => {
     render(<HeroTextSelector activeIndex={1} onSelect={vi.fn()} />)
     expect(screen.getByText('A Criação')).toBeInTheDocument()
     expect(screen.getByText('Videografia')).toBeInTheDocument()
     expect(screen.getByText('Fotografia')).toBeInTheDocument()
   })
 
-  it('applies active styles to the active item', () => {
+  it('applies active styles to the centered active item', () => {
     render(<HeroTextSelector activeIndex={1} onSelect={vi.fn()} />)
     const active = screen.getByText('Videografia')
-    expect(active.style.fontWeight).toBe('700')
+    expect(active?.style.fontWeight).toBe('600')
   })
 
   it('calls onSelect with correct index on click', () => {
     const onSelect = vi.fn()
     render(<HeroTextSelector activeIndex={1} onSelect={onSelect} />)
-    fireEvent.click(screen.getByText('Fotografia'))
+    fireEvent.click(screen.getAllByText('Fotografia')[0])
     expect(onSelect).toHaveBeenCalledWith(2)
   })
 
   it('applies dimmed styles to inactive items', () => {
     render(<HeroTextSelector activeIndex={1} onSelect={vi.fn()} />)
     const inactive = screen.getByText('A Criação')
-    expect(inactive.style.fontWeight).toBe('500')
+    expect(inactive?.style.fontWeight).toBe('500')
+  })
+
+  it('wraps the previous item when the first text is active', () => {
+    render(<HeroTextSelector activeIndex={0} onSelect={vi.fn()} />)
+    expect(screen.getByText('Fotografia')).toBeInTheDocument()
+    expect(screen.getByText('A Criação')).toBeInTheDocument()
+    expect(screen.getByText('Videografia')).toBeInTheDocument()
   })
 })

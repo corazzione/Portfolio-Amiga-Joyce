@@ -6,6 +6,9 @@ const { mockUseReducedMotion } = vi.hoisted(() => ({
 }))
 
 vi.mock('motion/react', () => ({
+  motion: {
+    img: ({ children, ...props }: any) => <img {...props}>{children}</img>,
+  },
   useReducedMotion: mockUseReducedMotion,
 }))
 
