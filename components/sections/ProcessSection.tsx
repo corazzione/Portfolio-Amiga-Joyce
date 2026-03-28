@@ -31,7 +31,7 @@ function ProcessCard({
 }) {
   return (
     <article
-      className={`w-full max-w-[320px] origin-center bg-white lg:sticky lg:top-28 ${rotation}`}
+      className={`sticky top-24 w-full max-w-[320px] origin-center bg-white ${rotation} sm:top-28`}
     >
       <div className="flex flex-col items-center gap-10 px-6 pb-8 pt-6">
         <div className="flex w-full flex-col items-center gap-2 pt-2">
