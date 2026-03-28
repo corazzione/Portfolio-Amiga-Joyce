@@ -14,7 +14,7 @@ export function PortfolioSection() {
   return (
     <section id="portfolio" className="py-24 px-6">
       <div className="max-w-7xl mx-auto">
-        <h2 className="font-switzer text-4xl font-bold tracking-tight mb-12">
+        <h2 className="font-switzer text-2xl sm:text-4xl font-bold tracking-tight mb-12">
           Trabalhos Selecionados
         </h2>
         <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-6">

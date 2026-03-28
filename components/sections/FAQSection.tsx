@@ -12,7 +12,7 @@ export function FAQSection() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
         {/* Left: title */}
         <div>
-          <h2 className="font-switzer text-5xl font-bold tracking-tight leading-none">
+          <h2 className="font-switzer text-3xl lg:text-5xl font-bold tracking-tight leading-none">
             Alguma<br />Duvida?
           </h2>
         </div>

@@ -5,7 +5,7 @@ export function BlogSection() {
   return (
     <section id="blog" className="py-24 px-6">
       <div className="max-w-7xl mx-auto">
-        <h2 className="font-switzer text-4xl font-bold tracking-tight mb-12">
+        <h2 className="font-switzer text-2xl sm:text-4xl font-bold tracking-tight mb-12">
           Ultimas Historias
         </h2>
         <div>

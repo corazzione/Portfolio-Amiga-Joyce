@@ -6,8 +6,8 @@ export function ServicesSection() {
   return (
     <section id="services" className="py-24 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="flex items-start justify-between mb-12">
-          <h2 className="font-switzer text-4xl font-bold tracking-tight">Meus Servicos</h2>
+        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-12">
+          <h2 className="font-switzer text-2xl sm:text-4xl font-bold tracking-tight">Meus Servicos</h2>
           <a
             href="#services"
             className="bg-gold text-white px-6 py-2 rounded-full font-switzer text-sm font-semibold hover:opacity-90 transition-opacity"

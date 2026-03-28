@@ -25,7 +25,7 @@ export function ProofStripSection() {
           </div>
 
           {/* Client logos as text spans */}
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-3 sm:gap-6 flex-wrap justify-center">
             {clientLogos.map((logo) => (
               <span
                 key={logo.id}
