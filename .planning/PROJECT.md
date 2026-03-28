@@ -20,10 +20,14 @@ Visitors feel the quality and aesthetic of Joyce's work through the site itself 
 - ✓ RevealWrapper + StaggerChildren client components in components/motion/ — validated in Phase 1: Foundation
 - ✓ Typed static content stubs in lib/data.ts (services, process steps, testimonials, blog posts, FAQ, logos) — validated in Phase 1: Foundation
 - ✓ vercel.json with font caching and security headers — validated in Phase 1: Foundation
+- ✓ TopNav (transparent→solid scroll) + BottomBar (fixed black, gold pill, AnimatePresence overlay) in components/layout/ — validated in Phase 2: Navigation Shell
+- ✓ Full-screen hero with dark gradient bg, video element slot, "MC. // UMA CONTADORA DE HISTÓRIAS VISUAL" tagline, HeroTextSelector (AnimatePresence cycling), gold CTA, staggered page-load entrance — validated in Phase 3: Hero + Animation System
+- ✓ RevealWrapper upgraded: variant prop ("fadeUp"|"scaleIn") + useReducedMotion() guard — validated in Phase 3: Hero + Animation System
+- ✓ StaggerChildren upgraded: useReducedMotion() guard — validated in Phase 3: Hero + Animation System
+- ✓ Vitest test infrastructure (vitest.config.ts, 4 test files, 13 tests green) — validated in Phase 3: Hero + Animation System
 
 ### Active
 
-- [ ] Full-screen hero section with background video, animated text selector (A Criação / Videografia / Fotografia), and mustard CTA button
 - [ ] Fixed bottom navigation bar (black bg, "Menu+" gold pill, "Corazón" center) with fullscreen dark overlay menu
 - [ ] Horizontal thumbnail strip + centered manifesto/statement text
 - [ ] CTA/proof section with avatar cluster and client logos (theo, Amsterdam, luminous, MILANO)
@@ -86,4 +90,4 @@ Visitors feel the quality and aesthetic of Joyce's work through the site itself 
 | index.html as reference | Complete visual spec already exists — don't reinvent, translate to React | — Pending |
 
 ---
-*Last updated: 2026-03-28 after Phase 1: Foundation complete*
+*Last updated: 2026-03-28 after Phase 3: Hero + Animation System complete*
