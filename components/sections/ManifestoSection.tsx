@@ -24,15 +24,16 @@ export function ManifestoSection() {
       <div className="mx-auto flex max-w-[1360px] flex-col items-center gap-16 lg:gap-[120px]">
         <div className="flex w-full justify-center overflow-visible">
           <div
-            className="flex w-full justify-center overflow-hidden pb-6 lg:pb-[120px]"
+            className="relative w-full overflow-hidden pb-6 sm:pb-8 lg:pb-12 xl:pb-[120px]"
             style={{
+              height: 'clamp(104px, 27vw, 281px)',
               maskImage:
                 'radial-gradient(46% 266%, #000 0%, #000 51.95%, transparent 100%)',
               WebkitMaskImage:
                 'radial-gradient(46% 266%, #000 0%, #000 51.95%, transparent 100%)',
             }}
           >
-            <div className="flex items-start justify-center gap-3 sm:gap-5 lg:gap-[21.48px]">
+            <div className="absolute left-1/2 top-0 flex w-[1386px] origin-top -translate-x-1/2 scale-[0.34] items-start justify-center gap-[21.48px] sm:scale-[0.46] md:scale-[0.55] lg:scale-[0.72] xl:scale-[0.86] 2xl:scale-100">
               {showcaseImages.map((image, index) => {
                 const isMain = index === 2
 
@@ -40,7 +41,7 @@ export function ManifestoSection() {
                   return (
                     <div
                       key={image}
-                      className="relative hidden shrink-0 bg-bg p-2 sm:block"
+                      className="relative shrink-0 bg-bg p-2"
                       style={{
                         width: '272px',
                         height: '281px',
@@ -60,7 +61,7 @@ export function ManifestoSection() {
                 return (
                   <div
                     key={image}
-                    className={`relative h-[180px] w-[31vw] max-w-[120px] shrink-0 sm:h-[243px] sm:w-[257px] sm:max-w-none ${index === 0 || index === 4 ? 'hidden lg:block' : ''}`}
+                    className="relative h-[243px] w-[257px] shrink-0"
                   >
                     <img
                       src={image}
