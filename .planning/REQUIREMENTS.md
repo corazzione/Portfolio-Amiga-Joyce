@@ -7,10 +7,10 @@
 
 ### Foundation
 
-- [ ] **FOUND-01**: Project scaffolds with Next.js 14 App Router, TypeScript, Tailwind CSS v3.4, and Motion v12 (`motion/react`)
-- [ ] **FOUND-02**: Switzer variable font is self-hosted via `next/font/local` from `app/fonts/Switzer-Variable.woff2` and exposed as a CSS variable in Tailwind config
-- [ ] **FOUND-03**: Public Sans is loaded via `next/font/google` and exposed as a CSS variable in Tailwind config
-- [ ] **FOUND-04**: Tailwind config has all custom tokens: `colors.bg` (#EFE8DC), `colors.gold` (#C8973A), `colors.dark` (#1a1a1a), `fontFamily.switzer`, `fontFamily.sans` (Public Sans)
+- [x] **FOUND-01**: Project scaffolds with Next.js 14 App Router, TypeScript, Tailwind CSS v3.4, and Motion v12 (`motion/react`)
+- [x] **FOUND-02**: Switzer variable font is self-hosted via `next/font/local` from `app/fonts/Switzer-Variable.woff2` and exposed as a CSS variable in Tailwind config
+- [x] **FOUND-03**: Public Sans is loaded via `next/font/google` and exposed as a CSS variable in Tailwind config
+- [x] **FOUND-04**: Tailwind config has all custom tokens: `colors.bg` (#EFE8DC), `colors.gold` (#C8973A), `colors.dark` (#1a1a1a), `fontFamily.switzer`, `fontFamily.sans` (Public Sans)
 - [ ] **FOUND-05**: Global animation variants are defined in `lib/animation-variants.ts` (fade+translateY, stagger, scale-in, spring)
 - [ ] **FOUND-06**: `RevealWrapper` and `StaggerChildren` client components are created in `components/motion/` and used site-wide for scroll reveals
 - [ ] **FOUND-07**: Static content data (services, process steps, testimonials, blog posts, FAQ, logos) lives in `lib/data.ts`
