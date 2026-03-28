@@ -31,23 +31,14 @@ Visitors feel the quality and aesthetic of Joyce's work through the site itself 
 - ✓ BentoSection: asymmetric CSS Grid trust grid (3-col, left card row-span-2, skill checklist, 4 right sub-cards), Server Component — validated in Phase 5: Complex Interactive Sections
 - ✓ TestimonialSection: dark cinematic section, AnimatePresence mode="wait" carousel, 5s auto-advance, dot nav with interval restart, useReducedMotion guard — validated in Phase 5: Complex Interactive Sections
 - ✓ 60 Vitest tests green across 17 files, production build passes — validated in Phase 5: Complex Interactive Sections
+- ✓ /portfolio page: 5 category sections, 16 PortfolioCards, responsive 3-col grid, Server Component — validated in Phase 6: Additional Pages
+- ✓ /contato page: ContactForm ('use client', 4-state Formspree integration, idle/submitting/success/error), two-column layout — validated in Phase 6: Additional Pages
+- ✓ /privacidade page: 10 LGPD-compliant sections in Portuguese, Lei n 13.709/2018 reference — validated in Phase 6: Additional Pages
+- ✓ 70 Vitest tests green across 20 files, 4 routes (/,/portfolio,/contato,/privacidade) build successfully — validated in Phase 6: Additional Pages
 
 ### Active
-- [ ] /contato page with contact form (Phase 6)
-- [ ] /portfolio page with portfolio listing (Phase 6)
-- [ ] /privacidade page (Phase 6)
 - [ ] Mobile responsive layout pass (Phase 7)
 - [ ] Lighthouse performance ≥ 85 on Vercel (Phase 7)
-- [ ] Scroll-reveal animation system (opacity 0→1, y 24→0, 0.8s, cubic-bezier(0.22,1,0.36,1)) across all sections
-- [ ] Staggered children animations for image rows, service cards, portfolio cards, blog cards
-- [ ] Subtle scale-in for featured images/cards (scale 0.985→1)
-- [ ] Gentle hover states on buttons, cards, and images
-- [ ] Polished mobile-responsive layout (vertical stacks, not just shrunk desktop)
-- [ ] Dark fullscreen mobile menu overlay with animated open/close
-- [ ] /contato page with contact form
-- [ ] /portfolio page with portfolio listing
-- [ ] /privacidade page (privacy/cookies)
-- [ ] Vercel deployment config (vercel.json)
 
 ### Out of Scope
 
@@ -88,4 +79,4 @@ Visitors feel the quality and aesthetic of Joyce's work through the site itself 
 | index.html as reference | Complete visual spec already exists — don't reinvent, translate to React | — Pending |
 
 ---
-*Last updated: 2026-03-28 after Phase 5: Complex Interactive Sections complete*
+*Last updated: 2026-03-28 after Phase 6: Additional Pages complete*
