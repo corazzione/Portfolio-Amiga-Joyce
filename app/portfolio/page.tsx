@@ -57,7 +57,7 @@ export default function PortfolioPage() {
     <main className="py-24 px-6">
       <div className="max-w-7xl mx-auto">
         <RevealWrapper>
-          <h1 className="font-switzer text-5xl font-bold tracking-tight mb-16">Todos os Trabalhos</h1>
+          <h1 className="font-switzer text-3xl sm:text-5xl font-bold tracking-tight mb-16">Todos os Trabalhos</h1>
         </RevealWrapper>
         {categories.map((category) => (
           <section key={category.name} className="mb-20">

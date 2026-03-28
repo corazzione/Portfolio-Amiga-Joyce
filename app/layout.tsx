@@ -15,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt-BR" className={`${switzer.variable} ${publicSans.variable}`}>
+    <html lang="pt-BR" className={`${switzer.variable} ${publicSans.variable} overflow-x-hidden`}>
       <body>
         <TopNav />
         {children}

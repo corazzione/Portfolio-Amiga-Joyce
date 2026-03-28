@@ -14,7 +14,7 @@ export default function ContatoPage() {
         {/* Left: contact info */}
         <RevealWrapper>
           <div>
-            <h1 className="font-switzer text-5xl font-bold tracking-tight mb-6">Vamos Conversar</h1>
+            <h1 className="font-switzer text-3xl sm:text-5xl font-bold tracking-tight mb-6">Vamos Conversar</h1>
             <p className="text-dark/60 text-lg leading-relaxed mb-8">
               Tem um projeto em mente? Adoraria ouvir sua ideia e transformar em visuais de outro nivel.
             </p>
