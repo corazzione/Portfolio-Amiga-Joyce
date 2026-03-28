@@ -82,10 +82,10 @@
 
 ### Performance & Deployment
 
-- [ ] **PERF-01**: All images use `next/image` with appropriate `sizes` attributes and lazy loading
-- [ ] **PERF-02**: Background videos are hosted externally (Vercel Blob or Cloudinary) — no video files committed to git
-- [ ] **PERF-03**: Site passes Lighthouse performance score ≥ 85 on deployed Vercel URL
-- [ ] **PERF-04**: Site is deployed and publicly accessible on Vercel from the `corazzione/Portfolio-Amiga-Joyce` repo
+- [x] **PERF-01**: All images use `next/image` with appropriate `sizes` attributes and lazy loading
+- [x] **PERF-02**: Background videos are hosted externally (Vercel Blob or Cloudinary) — no video files committed to git
+- [x] **PERF-03**: Site passes Lighthouse performance score ≥ 85 on deployed Vercel URL
+- [x] **PERF-04**: Site is deployed and publicly accessible on Vercel from the `corazzione/Portfolio-Amiga-Joyce` repo
 
 ## v2 Requirements
 
