@@ -57,7 +57,7 @@ Plans:
 ### Phase 3: Hero + Animation System
 **Goal**: The first impression works — visitors see and feel the editorial luxury aesthetic immediately, and the animation primitives are ready for every subsequent section
 **Depends on**: Phase 2
-**Requirements**: HERO-01, HERO-02, HERO-03, HERO-04, HERO-05, ANIM-01, ANIM-02, ANIM-03, ANIM-04, ANIM-05, ANIM-06
+**Requirements**: HERO-01, HERO-02, HERO-03, HERO-04, HERO-05, ANIM-01, ANIM-02, ANIM-03, ANIM-04, ANIM-06
 **Success Criteria** (what must be TRUE):
   1. Hero is full-screen (100vh) with a looping muted background video (or placeholder gradient) — no layout shift on load
   2. "MC. // UMA CONTADORA DE HISTÓRIAS VISUAL" overlay and gold CTA button animate in on page load without scroll trigger
@@ -73,7 +73,7 @@ Plans:
 ### Phase 4: Static Content Sections
 **Goal**: The complete homepage is populated — every section from photo strip through footer is present, scrollable, and animated
 **Depends on**: Phase 3
-**Requirements**: SECT-01, SECT-02, SECT-03, SECT-04, SECT-05, SECT-06, SECT-07, SECT-08, SECT-09, SECT-10
+**Requirements**: SECT-01, SECT-02, SECT-03, SECT-04, SECT-05, SECT-06, SECT-07, SECT-08, SECT-09, SECT-10, ANIM-05
 **Success Criteria** (what must be TRUE):
   1. Scrolling past the hero reveals a horizontal photo strip, then a centered manifesto/statement text block — both animate in on scroll
   2. The proof strip shows a "Meu Portfólio" button, stacked avatar cluster, and four client brand logos (theo, Amsterdam, luminous, MILANO)
