@@ -27,12 +27,12 @@ Visitors feel the quality and aesthetic of Joyce's work through the site itself 
 - ✓ Vitest test infrastructure (vitest.config.ts, 4 test files, 13 tests green) — validated in Phase 3: Hero + Animation System
 - ✓ All 10 homepage sections (PhotoStrip, Manifesto, ProofStrip, Services, Portfolio, Blog, FAQ, CTA, Footer) in components/sections/ — validated in Phase 4: Static Content Sections
 - ✓ ServiceCard + PortfolioCard with whileHover scale (ANIM-05), FAQSection useState accordion, 40 Vitest tests green — validated in Phase 4: Static Content Sections
+- ✓ ProcessSection: 6 pure CSS sticky stacked cards with alternating rotation, complete Tailwind string literals (no purge), Server Component — validated in Phase 5: Complex Interactive Sections
+- ✓ BentoSection: asymmetric CSS Grid trust grid (3-col, left card row-span-2, skill checklist, 4 right sub-cards), Server Component — validated in Phase 5: Complex Interactive Sections
+- ✓ TestimonialSection: dark cinematic section, AnimatePresence mode="wait" carousel, 5s auto-advance, dot nav with interval restart, useReducedMotion guard — validated in Phase 5: Complex Interactive Sections
+- ✓ 60 Vitest tests green across 17 files, production build passes — validated in Phase 5: Complex Interactive Sections
 
 ### Active
-
-- [ ] "Um Caminho Claro para Visuais Excepcionais" — 6 sticky stacked process cards with paper-like rotation (Phase 5)
-- [ ] "Construído na Confiança, Movido pela Qualidade" — asymmetric bento trust grid (Phase 5)
-- [ ] Dark cinematic testimonial section with looping background video and floating white review cards (auto-advance 5s, dot nav) (Phase 5)
 - [ ] /contato page with contact form (Phase 6)
 - [ ] /portfolio page with portfolio listing (Phase 6)
 - [ ] /privacidade page (Phase 6)
@@ -88,4 +88,4 @@ Visitors feel the quality and aesthetic of Joyce's work through the site itself 
 | index.html as reference | Complete visual spec already exists — don't reinvent, translate to React | — Pending |
 
 ---
-*Last updated: 2026-03-28 after Phase 3: Hero + Animation System complete*
+*Last updated: 2026-03-28 after Phase 5: Complex Interactive Sections complete*
