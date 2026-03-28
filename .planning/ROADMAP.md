@@ -13,7 +13,7 @@ Seven phases build the Corazón portfolio from infrastructure outward. Phase 1 e
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Foundation** - Scaffold Next.js 14 with locked design system, fonts, Tailwind tokens, animation primitives, and Vercel deployment (completed 2026-03-28)
-- [ ] **Phase 2: Navigation Shell** - Top navbar, fixed bottom bar, and fullscreen menu overlay across all pages
+- [x] **Phase 2: Navigation Shell** - Top navbar, fixed bottom bar, and fullscreen menu overlay across all pages (completed 2026-03-28)
 - [ ] **Phase 3: Hero + Animation System** - Full-screen hero section and reusable scroll-reveal primitives consumed by every subsequent section
 - [ ] **Phase 4: Static Content Sections** - All homepage sections including FAQ, CTA, and footer
 - [ ] **Phase 5: Complex Interactive Sections** - Sticky stacked process cards and dark cinematic testimonial carousel
@@ -48,11 +48,11 @@ Plans:
   3. Clicking "Menu+" opens a fullscreen dark overlay menu with a smooth animated entrance (slide or fade via AnimatePresence)
   4. Clicking a navigation link inside the overlay closes the menu and navigates to the correct page
   5. The fullscreen menu overlay covers the full viewport on mobile with vertical navigation layout
-**Plans:** 1/2 plans executed
+**Plans:** 2/2 plans complete
 
 Plans:
-- [ ] 02-01-PLAN.md — Create TopNav and BottomBar components with scroll toggle and AnimatePresence overlay
-- [ ] 02-02-PLAN.md — Wire nav components into root layout, add body padding, visual verification
+- [x] 02-01-PLAN.md — Create TopNav and BottomBar components with scroll toggle and AnimatePresence overlay
+- [x] 02-02-PLAN.md — Wire nav components into root layout, add body padding, visual verification
 
 ### Phase 3: Hero + Animation System
 **Goal**: The first impression works — visitors see and feel the editorial luxury aesthetic immediately, and the animation primitives are ready for every subsequent section
@@ -121,7 +121,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation | 2/2 | Complete   | 2026-03-28 |
-| 2. Navigation Shell | 1/2 | In Progress|  |
+| 2. Navigation Shell | 2/2 | Complete   | 2026-03-28 |
 | 3. Hero + Animation System | 0/TBD | Not started | - |
 | 4. Static Content Sections | 0/TBD | Not started | - |
 | 5. Complex Interactive Sections | 0/TBD | Not started | - |

@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: unknown
-stopped_at: "Completed 02-01-PLAN.md"
-last_updated: "2026-03-28T06:15:38.000Z"
+status: executing
+stopped_at: "Completed 02-02-PLAN.md"
+last_updated: "2026-03-28T05:59:12.000Z"
 progress:
   total_phases: 7
-  completed_phases: 1
+  completed_phases: 2
   total_plans: 4
-  completed_plans: 3
+  completed_plans: 4
 ---
 
 # Project State
@@ -19,31 +19,31 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-28)
 
 **Core value:** Visitors feel the quality and aesthetic of Joyce's work through the site itself — every scroll, reveal, and interaction communicates premium visual storytelling before they've seen a single photo.
-**Current focus:** Phase 02 — navigation-shell
+**Current focus:** Phase 03 — hero-landing
 
 ## Current Position
 
-Phase: 02 (navigation-shell) — EXECUTING
-Plan: 2 of 2
+Phase: 03 (hero-landing) — NEXT
+Plan: 1 of N
 
 ## Performance Metrics
 
 **Velocity:**
 
-- Total plans completed: 3
+- Total plans completed: 4
 - Average duration: 3 min
-- Total execution time: 0.15 hours
+- Total execution time: 0.2 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 01-foundation | 2/2 | 8 min | 4 min |
-| 02-navigation-shell | 1/2 | 1 min | 1 min |
+| 02-navigation-shell | 2/2 | 4 min | 2 min |
 
 **Recent Trend:**
 
-- Last 5 plans: 1 min
+- Last 5 plans: 2 min
 - Trend: fast
 
 *Updated after each plan completion*
@@ -69,6 +69,8 @@ Recent decisions affecting current work:
 - [02-01]: AnimatePresence lives in BottomBar (always-mounted parent) — exit animations require this pattern
 - [02-01]: Overlay nav links use button + useRouter.push to guarantee overlay closes before navigation
 - [02-01]: Scroll listener uses functional update pattern to avoid re-renders when value unchanged
+- [02-02]: Body padding uses plain CSS padding-bottom: 60px — not Tailwind arbitrary @apply pb-[60px] which can be unreliable
+- [02-02]: layout.tsx remains a Server Component — TopNav and BottomBar self-declare 'use client' as Client Component boundaries
 
 ### Pending Todos
 
@@ -82,6 +84,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-28T06:15:38.000Z
-Stopped at: Completed 02-01-PLAN.md
-Resume file: .planning/phases/02-navigation-shell/02-02-PLAN.md
+Last session: 2026-03-28T05:59:12.000Z
+Stopped at: Completed 02-02-PLAN.md
+Resume file: .planning/phases/03-hero-landing/03-01-PLAN.md
