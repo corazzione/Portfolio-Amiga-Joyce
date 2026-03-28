@@ -50,9 +50,9 @@
 - [x] **COMP-01**: "Um Caminho Claro para Visuais Excepcionais" section shows 6 process steps as sticky stacked cards with paper-like slight rotation; cards stack as user scrolls through the section
 - [x] **COMP-02**: Each process card has: step number, step name, circular image, and description (Descoberta, Planejamento, Captação, Edição, Entrega, Otimização)
 - [x] **COMP-03**: "Construído na Confiança, Movido pela Qualidade" section is an asymmetric bento grid with: tall photo card left (Visão Personalizada overlay), center beige card (Atenção aos Detalhes + skill checklist), right column (4 sub-cards: equipment, quality polaroids, collaborations with avatars/stats, dark Abordagem Narrativa card)
-- [ ] **COMP-04**: Dark cinematic testimonial section has a looping background video with 3 floating white review cards — Danny Rose, David Nguyen, Alisha Moore
-- [ ] **COMP-05**: Testimonial cards auto-advance every 5 seconds with dot navigation for manual control
-- [ ] **COMP-06**: Testimonial section transition uses AnimatePresence for smooth card enter/exit
+- [x] **COMP-04**: Dark cinematic testimonial section has a looping background video with 3 floating white review cards — Danny Rose, David Nguyen, Alisha Moore
+- [x] **COMP-05**: Testimonial cards auto-advance every 5 seconds with dot navigation for manual control
+- [x] **COMP-06**: Testimonial section transition uses AnimatePresence for smooth card enter/exit
 
 ### Animation System
 

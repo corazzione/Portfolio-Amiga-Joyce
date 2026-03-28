@@ -16,7 +16,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 2: Navigation Shell** - Top navbar, fixed bottom bar, and fullscreen menu overlay across all pages (completed 2026-03-28)
 - [x] **Phase 3: Hero + Animation System** - Full-screen hero section and reusable scroll-reveal primitives consumed by every subsequent section (completed 2026-03-28)
 - [x] **Phase 4: Static Content Sections** - All homepage sections including FAQ, CTA, and footer (completed 2026-03-28)
-- [ ] **Phase 5: Complex Interactive Sections** - Sticky stacked process cards and dark cinematic testimonial carousel
+- [x] **Phase 5: Complex Interactive Sections** - Sticky stacked process cards and dark cinematic testimonial carousel (completed 2026-03-28)
 - [ ] **Phase 6: Additional Pages** - Sub-pages /portfolio, /contato, and /privacidade
 - [ ] **Phase 7: Mobile Responsive + Performance** - Genuine mobile redesign at all breakpoints and Lighthouse performance pass
 
@@ -97,7 +97,7 @@ Plans:
   3. The bento trust grid renders with a tall photo card left, center content card with skill checklist, and right column of 4 sub-cards — asymmetric layout intact
   4. The testimonial section shows a dark cinematic background with 3 floating white review cards (Danny Rose, David Nguyen, Alisha Moore)
   5. Testimonial cards auto-advance every 5 seconds; clicking dot navigation manually selects a card; transitions use AnimatePresence for smooth enter/exit
-**Plans:** 1/2 plans executed
+**Plans:** 2/2 plans complete
 
 Plans:
 - [ ] 05-01-PLAN.md — Wave 0 test stubs + ProcessSection (sticky cards) + BentoSection (trust grid)
@@ -137,6 +137,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7
 | 2. Navigation Shell | 2/2 | Complete   | 2026-03-28 |
 | 3. Hero + Animation System | 2/2 | Complete   | 2026-03-28 |
 | 4. Static Content Sections | 3/3 | Complete   | 2026-03-28 |
-| 5. Complex Interactive Sections | 1/2 | In Progress|  |
+| 5. Complex Interactive Sections | 2/2 | Complete   | 2026-03-28 |
 | 6. Additional Pages | 0/TBD | Not started | - |
 | 7. Mobile Responsive + Performance | 0/TBD | Not started | - |
