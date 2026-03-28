@@ -36,9 +36,15 @@ Visitors feel the quality and aesthetic of Joyce's work through the site itself 
 - ✓ /privacidade page: 10 LGPD-compliant sections in Portuguese, Lei n 13.709/2018 reference — validated in Phase 6: Additional Pages
 - ✓ 70 Vitest tests green across 20 files, 4 routes (/,/portfolio,/contato,/privacidade) build successfully — validated in Phase 6: Additional Pages
 
+- ✓ All sections mobile-first responsive (grid-cols-1 base, text-2xl sm:text-4xl scaling, flex-col sm:flex-row stacking, overflow-x-hidden) — validated in Phase 7: Mobile Responsive + Performance
+- ✓ ProcessSection sm:sticky fallback — cards stack naturally on mobile, sticky only at sm+ breakpoint — validated in Phase 7: Mobile Responsive + Performance
+- ✓ TestimonialSection touch swipe (onTouchStart/onTouchEnd, 50px threshold, left=next, right=prev) — validated in Phase 7: Mobile Responsive + Performance
+- ✓ Video hosting pattern documented (NEXT_PUBLIC_VIDEO_URL comments), src="" bug removed — validated in Phase 7: Mobile Responsive + Performance
+- ✓ vercel.json production-ready (framework, font cache headers, security headers) — validated in Phase 7: Mobile Responsive + Performance
+- ✓ 74 Vitest tests green across 20 files, production build exits 0 — validated in Phase 7: Mobile Responsive + Performance
+
 ### Active
-- [ ] Mobile responsive layout pass (Phase 7)
-- [ ] Lighthouse performance ≥ 85 on Vercel (Phase 7)
+- [ ] Lighthouse performance ≥ 85 — verify on Vercel after deployment (manual, post-deploy)
 
 ### Out of Scope
 
@@ -79,4 +85,4 @@ Visitors feel the quality and aesthetic of Joyce's work through the site itself 
 | index.html as reference | Complete visual spec already exists — don't reinvent, translate to React | — Pending |
 
 ---
-*Last updated: 2026-03-28 after Phase 6: Additional Pages complete*
+*Last updated: 2026-03-28 after Phase 7: Mobile Responsive + Performance complete — all 7 phases done, v1 ready for Vercel deployment*
