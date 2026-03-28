@@ -97,7 +97,11 @@ Plans:
   3. The bento trust grid renders with a tall photo card left, center content card with skill checklist, and right column of 4 sub-cards — asymmetric layout intact
   4. The testimonial section shows a dark cinematic background with 3 floating white review cards (Danny Rose, David Nguyen, Alisha Moore)
   5. Testimonial cards auto-advance every 5 seconds; clicking dot navigation manually selects a card; transitions use AnimatePresence for smooth enter/exit
-**Plans**: TBD
+**Plans:** 2 plans
+
+Plans:
+- [ ] 05-01-PLAN.md — Wave 0 test stubs + ProcessSection (sticky cards) + BentoSection (trust grid)
+- [ ] 05-02-PLAN.md — TestimonialSection (carousel) + page.tsx integration + build verification
 
 ### Phase 6: Additional Pages
 **Goal**: All sub-pages exist and are functional — visitors can browse the portfolio, submit a contact request, and read the privacy policy
@@ -133,6 +137,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7
 | 2. Navigation Shell | 2/2 | Complete   | 2026-03-28 |
 | 3. Hero + Animation System | 2/2 | Complete   | 2026-03-28 |
 | 4. Static Content Sections | 3/3 | Complete   | 2026-03-28 |
-| 5. Complex Interactive Sections | 0/TBD | Not started | - |
+| 5. Complex Interactive Sections | 0/2 | Not started | - |
 | 6. Additional Pages | 0/TBD | Not started | - |
 | 7. Mobile Responsive + Performance | 0/TBD | Not started | - |
