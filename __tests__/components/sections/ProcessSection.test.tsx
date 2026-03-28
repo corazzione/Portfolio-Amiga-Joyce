@@ -70,4 +70,30 @@ describe('ProcessSection', () => {
     const rotatedEls = container.querySelectorAll('[class*="rotate-"]')
     expect(rotatedEls.length).toBeGreaterThanOrEqual(1)
   })
+
+  it('renders container with sm:min-h-[300vh] instead of unconditional min-h', () => {
+    render(<ProcessSection />)
+    const container = document.querySelector('.sm\\:min-h-\\[300vh\\]')
+    expect(container).toBeTruthy()
+    const unconditional = document.querySelector('.min-h-\\[300vh\\]')
+    expect(unconditional).toBeFalsy()
+  })
+
+  it('renders cards with sm:sticky instead of unconditional sticky', () => {
+    render(<ProcessSection />)
+    const stickyCards = document.querySelectorAll('.sm\\:sticky')
+    expect(stickyCards.length).toBe(6)
+    const unconditionalSticky = document.querySelectorAll('[class*="sticky"]:not([class*="sm:sticky"])')
+    // Filter out elements that don't actually have standalone 'sticky'
+    const trueUnconditional = Array.from(unconditionalSticky).filter(el =>
+      el.className.split(' ').includes('sticky')
+    )
+    expect(trueUnconditional.length).toBe(0)
+  })
+
+  it('renders heading with mobile-scaled text class', () => {
+    render(<ProcessSection />)
+    const heading = screen.getByText('Um Caminho Claro para Visuais Excepcionais')
+    expect(heading.className).toContain('text-2xl')
+  })
 })

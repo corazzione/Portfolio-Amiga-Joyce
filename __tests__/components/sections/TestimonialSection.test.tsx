@@ -73,4 +73,18 @@ describe('TestimonialSection', () => {
     expect(screen.getByText('Danny Rose')).toBeTruthy()
     mockUseReducedMotion.mockReturnValue(false)
   })
+
+  it('renders content container with touch event handlers', () => {
+    vi.useFakeTimers()
+    const { container } = render(<TestimonialSection />)
+    // The swipeable div has onTouchStart/onTouchEnd — find by the z-10 class
+    const swipeableDiv = container.querySelector('.z-10')
+    expect(swipeableDiv).toBeTruthy()
+    // Fire touch events to confirm they don't throw
+    if (swipeableDiv) {
+      fireEvent.touchStart(swipeableDiv, { touches: [{ clientX: 200 }] })
+      fireEvent.touchEnd(swipeableDiv, { changedTouches: [{ clientX: 100 }] })
+    }
+    vi.useRealTimers()
+  })
 })
