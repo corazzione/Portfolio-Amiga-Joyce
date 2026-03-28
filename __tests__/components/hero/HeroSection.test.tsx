@@ -1,7 +1,9 @@
 import { render, screen } from '@testing-library/react'
 import { describe, it, expect, vi } from 'vitest'
 
-const mockUseReducedMotion = vi.fn(() => false)
+const { mockUseReducedMotion } = vi.hoisted(() => ({
+  mockUseReducedMotion: vi.fn(() => false),
+}))
 
 vi.mock('motion/react', () => ({
   motion: {
@@ -14,15 +16,49 @@ vi.mock('motion/react', () => ({
     section: ({ children, ...props }: React.HTMLAttributes<HTMLElement> & { children?: React.ReactNode }) => (
       <section {...props}>{children}</section>
     ),
+    p: ({ children, ...props }: React.HTMLAttributes<HTMLParagraphElement> & { children?: React.ReactNode }) => (
+      <p {...props}>{children}</p>
+    ),
+    a: ({ children, ...props }: React.AnchorHTMLAttributes<HTMLAnchorElement> & { children?: React.ReactNode }) => (
+      <a {...props}>{children}</a>
+    ),
   },
   AnimatePresence: ({ children }: { children: React.ReactNode }) => <>{children}</>,
   useReducedMotion: mockUseReducedMotion,
   useInView: vi.fn(() => true),
 }))
 
-// HeroSection will be created in Plan 03-02 — these tests are expected to fail until then
+vi.mock('@/components/hero/HeroTextSelector', () => ({
+  HeroTextSelector: () => <span data-testid="hero-text-selector">A Criação</span>,
+}))
+
+import { HeroSection } from '@/components/hero/HeroSection'
+
 describe('HeroSection', () => {
-  it.todo('renders video element')
-  it.todo("renders CTA button with 'Ver Portfólio' text")
-  it.todo('renders tagline with MC.')
+  it('renders video element', () => {
+    render(<HeroSection />)
+    const video = document.querySelector('video')
+    expect(video).toBeTruthy()
+    expect(video?.autoplay).toBe(true)
+    expect(video?.muted).toBe(true)
+    expect(video?.loop).toBe(true)
+  })
+
+  it("renders CTA button with 'Ver Portfolio' text", () => {
+    render(<HeroSection />)
+    const cta = screen.getByRole('link', { name: /ver portfolio/i })
+    expect(cta).toBeTruthy()
+    expect(cta.getAttribute('href')).toBe('#portfolio')
+  })
+
+  it('renders tagline with MC.', () => {
+    render(<HeroSection />)
+    expect(screen.getByText(/MC\./)).toBeTruthy()
+    expect(screen.getByText(/CONTADORA/)).toBeTruthy()
+  })
+
+  it('renders HeroTextSelector', () => {
+    render(<HeroSection />)
+    expect(screen.getByTestId('hero-text-selector')).toBeTruthy()
+  })
 })
