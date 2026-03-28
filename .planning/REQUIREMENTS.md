@@ -34,11 +34,11 @@
 
 ### Sections — Content
 
-- [ ] **SECT-01**: Horizontal photo strip with thumbnail images scrolls/reveals below the hero
-- [ ] **SECT-02**: Centered manifesto/statement text section below the photo strip with scroll-reveal
-- [ ] **SECT-03**: CTA/proof strip includes: mustard "Meu Portfólio" button, avatar cluster (stacked circular avatars), and client logos (theo, Amsterdam, luminous, MILANO)
-- [ ] **SECT-04**: "Meus Serviços" section has a heading left + button right layout, followed by a 4-column white card grid with 7 service cards + 1 photo card
-- [ ] **SECT-05**: Each service card shows a title, short description, and icon/visual; cards stagger-reveal on scroll
+- [x] **SECT-01**: Horizontal photo strip with thumbnail images scrolls/reveals below the hero
+- [x] **SECT-02**: Centered manifesto/statement text section below the photo strip with scroll-reveal
+- [x] **SECT-03**: CTA/proof strip includes: mustard "Meu Portfólio" button, avatar cluster (stacked circular avatars), and client logos (theo, Amsterdam, luminous, MILANO)
+- [x] **SECT-04**: "Meus Serviços" section has a heading left + button right layout, followed by a 4-column white card grid with 7 service cards + 1 photo card
+- [x] **SECT-05**: Each service card shows a title, short description, and icon/visual; cards stagger-reveal on scroll
 - [ ] **SECT-06**: "Trabalhos Selecionados" section shows a 3-column portfolio preview grid with image + caption; items stagger-reveal on scroll
 - [ ] **SECT-07**: "Últimas Histórias" section shows 3 blog preview cards with horizontal line separators between them
 - [ ] **SECT-08**: FAQ section has "Alguma Dúvida?" title on the left and an accordion on the right with 4 questions in Portuguese; accordion items expand/collapse with animation
@@ -60,7 +60,7 @@
 - [x] **ANIM-02**: Image rows, service cards, portfolio cards, and blog cards stagger-reveal with 0.1s delay between children
 - [x] **ANIM-03**: Featured images and cards have subtle scale-in on reveal (scale 0.985→1)
 - [x] **ANIM-04**: Buttons have gentle hover state (scale, color, or opacity transition)
-- [ ] **ANIM-05**: Cards and images have subtle hover elevation/scale on mouse enter
+- [x] **ANIM-05**: Cards and images have subtle hover elevation/scale on mouse enter
 - [x] **ANIM-06**: All animations respect `prefers-reduced-motion` — zero motion in reduced-motion mode
 
 ### Responsive

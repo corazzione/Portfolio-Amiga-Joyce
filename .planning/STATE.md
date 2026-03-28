@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-stopped_at: Completed 03-02-PLAN.md
-last_updated: "2026-03-28T06:32:07.920Z"
+stopped_at: Completed 04-01-PLAN.md
+last_updated: "2026-03-28T06:52:25.367Z"
 progress:
   total_phases: 7
   completed_phases: 3
-  total_plans: 6
-  completed_plans: 6
+  total_plans: 9
+  completed_plans: 7
 ---
 
 # Project State
@@ -19,12 +19,12 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-28)
 
 **Core value:** Visitors feel the quality and aesthetic of Joyce's work through the site itself — every scroll, reveal, and interaction communicates premium visual storytelling before they've seen a single photo.
-**Current focus:** Phase 03 — hero-animation-system (COMPLETE)
+**Current focus:** Phase 04 — static-content-sections
 
 ## Current Position
 
-Phase: 03 (hero-animation-system) — COMPLETE
-Plan: 2 of 2
+Phase: 04 (static-content-sections) — EXECUTING
+Plan: 2 of 3
 
 ## Performance Metrics
 
@@ -48,6 +48,7 @@ Plan: 2 of 2
 - Trend: fast
 
 *Updated after each plan completion*
+| Phase 04 P01 | 2 | 3 tasks | 15 files |
 
 ## Accumulated Context
 
@@ -78,6 +79,8 @@ Recent decisions affecting current work:
 - [03-02]: HeroSection uses initial/animate (not useInView) — page-load entrance must fire without scroll for above-the-fold content
 - [03-02]: motion.p and motion.a added to test mock — plan used these elements not covered by 03-01 stub
 - [03-02]: Video src='' intentional — gradient div covers blank video, no broken icon; real asset wired in by setting src
+- [Phase 04-01]: Server Component sections delegate 'use client' boundary to ServiceCard only — keeps animation contained to interactive leaf nodes
+- [Phase 04-01]: Test stubs use it.todo() not commented describe blocks — vitest recognizes files without import errors from non-existent components
 
 ### Pending Todos
 
@@ -91,6 +94,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-28T03:31:00.000Z
-Stopped at: Completed 03-02-PLAN.md
-Resume file: .planning/phases/04-portfolio-grid/04-01-PLAN.md
+Last session: 2026-03-28T06:52:17.917Z
+Stopped at: Completed 04-01-PLAN.md
+Resume file: None

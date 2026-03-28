@@ -80,7 +80,7 @@ Plans:
   3. "Meus Serviços" displays a 4-column white card grid with 7 service cards + 1 photo card; cards stagger-reveal on scroll; "Trabalhos Selecionados" shows a 3-column portfolio preview grid; "Últimas Histórias" shows 3 blog cards with horizontal separators
   4. FAQ section shows "Alguma Dúvida?" title left and an accordion right with 4 Portuguese questions that expand and collapse with animation
   5. Final CTA section shows the heading and "Entre em Contato" button; footer renders with Corazón brand, social links, and "MC. © 2026" — the homepage is complete end-to-end
-**Plans:** 3 plans
+**Plans:** 1/3 plans executed
 
 Plans:
 - [ ] 04-01-PLAN.md — Wave 0 test stubs + PhotoStrip, Manifesto, ProofStrip, Services sections
@@ -132,7 +132,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7
 | 1. Foundation | 2/2 | Complete   | 2026-03-28 |
 | 2. Navigation Shell | 2/2 | Complete   | 2026-03-28 |
 | 3. Hero + Animation System | 2/2 | Complete   | 2026-03-28 |
-| 4. Static Content Sections | 0/3 | Not started | - |
+| 4. Static Content Sections | 1/3 | In Progress|  |
 | 5. Complex Interactive Sections | 0/TBD | Not started | - |
 | 6. Additional Pages | 0/TBD | Not started | - |
 | 7. Mobile Responsive + Performance | 0/TBD | Not started | - |
