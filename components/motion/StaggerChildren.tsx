@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, useInView } from 'motion/react'
+import { motion, useInView, useReducedMotion } from 'motion/react'
 import { useRef } from 'react'
 import { stagger, fadeUp } from '@/lib/animation-variants'
 
@@ -12,13 +12,14 @@ interface StaggerChildrenProps {
 export function StaggerChildren({ children, className }: StaggerChildrenProps) {
   const ref = useRef<HTMLDivElement>(null)
   const inView = useInView(ref, { once: true, margin: '0px 0px -40px 0px' })
+  const prefersReduced = useReducedMotion()
 
   return (
     <motion.div
       ref={ref}
       variants={stagger}
-      initial="hidden"
-      animate={inView ? 'visible' : 'hidden'}
+      initial={prefersReduced ? 'visible' : 'hidden'}
+      animate={prefersReduced ? 'visible' : (inView ? 'visible' : 'hidden')}
       className={className}
     >
       {children}
