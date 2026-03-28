@@ -1,0 +1,1546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Corazón — Uma Contadora Visual de Histórias</title>
+<link rel="preconnect" href="https://api.fontshare.com"/>
+<link href="https://api.fontshare.com/v2/css?f[]=switzer@400,500,600,700,800,900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+:root{
+  --bg:#EFE8DC;
+  --gold:#C8973A;
+  --gold-dark:#A87828;
+  --black:#1a1a1a;
+  --white:#ffffff;
+  --muted:#888880;
+  --border:#D8D0C2;
+  --card-bg:#ffffff;
+  --dark-section:#1a1a18;
+}
+body{
+  background:var(--bg);
+  color:var(--black);
+  font-family:'Public Sans',sans-serif;
+  font-size:15px;
+  line-height:1.6;
+  overflow-x:hidden;
+  padding-bottom:60px; /* space for bottom bar */
+}
+h1,h2,h3,h4,h5{font-family:'Switzer',sans-serif;font-weight:700;line-height:1.1}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--gold);border-radius:2px}
+
+/* ══════════════════════════════════
+   TOP NAV
+══════════════════════════════════ */
+.top-nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:20px 32px;
+  pointer-events:none;
+}
+.top-nav>*{pointer-events:all}
+.nav-brand{
+  display:flex;align-items:center;gap:10px;
+  font-family:'Switzer',sans-serif;font-weight:700;font-size:13px;
+  letter-spacing:0.04em;text-transform:uppercase;color:var(--black);
+  text-decoration:none;
+}
+.nav-brand .slash{color:var(--muted);font-weight:400;margin:0 4px}
+.nav-brand .sub{font-weight:400;font-size:12px;letter-spacing:0.1em;color:var(--muted)}
+.btn-contact{
+  background:var(--gold);color:var(--white);
+  padding:10px 22px;border-radius:6px;
+  font-family:'Switzer',sans-serif;font-weight:700;font-size:11px;
+  letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;
+  transition:background .25s,transform .2s;
+  border:none;cursor:pointer;
+}
+.btn-contact:hover{background:var(--gold-dark);transform:translateY(-1px)}
+
+/* ══════════════════════════════════
+   BOTTOM STICKY BAR
+══════════════════════════════════ */
+.bottom-bar{
+  position:fixed;bottom:0;left:0;right:0;z-index:200;
+  height:52px;background:var(--black);
+  display:flex;align-items:center;justify-content:center;
+  gap:0;
+}
+.bottom-bar-menu{
+  position:absolute;left:0;
+  display:flex;align-items:center;
+}
+.btn-menu{
+  background:var(--gold);color:var(--white);
+  padding:0 24px;height:52px;
+  display:flex;align-items:center;gap:8px;
+  font-family:'Switzer',sans-serif;font-weight:700;font-size:12px;
+  letter-spacing:0.1em;text-transform:uppercase;
+  border:none;cursor:pointer;transition:background .25s;
+}
+.btn-menu:hover{background:var(--gold-dark)}
+.btn-menu .plus{font-size:16px;font-weight:300}
+.bottom-name{
+  font-family:'Switzer',sans-serif;font-weight:700;font-size:12px;
+  letter-spacing:0.15em;text-transform:uppercase;color:var(--white);
+}
+
+/* MOBILE MENU OVERLAY */
+.menu-overlay{
+  position:fixed;inset:0;z-index:300;
+  background:var(--black);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:48px;
+  opacity:0;pointer-events:none;
+  transition:opacity .4s;
+}
+.menu-overlay.open{opacity:1;pointer-events:all}
+.menu-overlay a{
+  font-family:'Switzer',sans-serif;font-size:clamp(36px,6vw,72px);font-weight:700;
+  color:var(--white);text-decoration:none;letter-spacing:-0.02em;
+  transition:color .25s;
+}
+.menu-overlay a:hover{color:var(--gold)}
+.menu-close{
+  position:absolute;top:24px;right:32px;
+  background:none;border:none;color:var(--white);font-size:28px;cursor:pointer;
+}
+.menu-overlay-bottom{
+  position:absolute;bottom:32px;left:32px;
+  display:flex;gap:16px;
+}
+.menu-overlay-bottom a{
+  font-size:13px!important;color:var(--muted)!important;letter-spacing:0.08em;
+}
+
+/* ══════════════════════════════════
+   HERO
+══════════════════════════════════ */
+#hero{
+  min-height:100vh;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  position:relative;
+  padding:80px 24px 100px;
+  overflow:hidden;
+}
+.hero-selector{
+  display:flex;flex-direction:column;align-items:center;
+  gap:6px;
+  user-select:none;
+}
+.hero-item{
+  font-family:'Switzer',sans-serif;font-weight:700;
+  cursor:pointer;transition:all .4s ease;
+  text-align:center;
+}
+.hero-item.small{
+  font-size:clamp(14px,2vw,18px);
+  color:rgba(26,26,26,0.3);
+  font-weight:500;
+  letter-spacing:0.02em;
+}
+.hero-item.active{
+  font-size:clamp(40px,7vw,88px);
+  color:var(--black);
+  letter-spacing:-0.03em;
+  line-height:1;
+}
+
+/* ══════════════════════════════════
+   PHOTO STRIP (gallery)
+══════════════════════════════════ */
+.photo-strip{
+  width:100%;padding:0 32px;
+  display:flex;align-items:center;justify-content:center;
+  gap:12px;
+  overflow:hidden;
+  margin:0 0 80px;
+}
+.strip-photo{
+  flex-shrink:0;
+  border-radius:6px;overflow:hidden;
+  transition:all .5s ease;
+  position:relative;
+}
+.strip-photo img{
+  display:block;width:100%;height:100%;object-fit:cover;
+  transition:transform .5s ease;
+}
+.strip-photo:not(.featured){
+  width:220px;height:300px;
+  opacity:0.7;
+}
+.strip-photo.featured{
+  width:280px;height:360px;
+  border:8px solid white;
+  box-shadow:0 20px 60px rgba(0,0,0,0.15);
+  z-index:2;
+}
+.strip-photo:hover img{transform:scale(1.04)}
+
+/* Placeholder photos */
+.photo-placeholder{
+  width:100%;height:100%;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--border);
+  color:var(--muted);font-size:12px;
+}
+
+/* ══════════════════════════════════
+   STATEMENT
+══════════════════════════════════ */
+.statement{
+  padding:60px 40px 80px;
+  text-align:center;
+  max-width:860px;margin:0 auto;
+}
+.statement p{
+  font-family:'Switzer',sans-serif;font-weight:700;
+  font-size:clamp(22px,3.5vw,38px);
+  line-height:1.35;letter-spacing:-0.01em;
+  color:var(--black);
+}
+
+/* ══════════════════════════════════
+   CTA STRIP + STATS
+══════════════════════════════════ */
+.cta-strip{
+  display:flex;align-items:center;justify-content:center;gap:32px;
+  padding:0 40px 48px;
+  flex-wrap:wrap;
+}
+.btn-gold{
+  display:inline-flex;align-items:center;
+  background:var(--gold);color:var(--white);
+  padding:16px 32px;border-radius:6px;
+  font-family:'Switzer',sans-serif;font-weight:700;font-size:12px;
+  letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;
+  transition:all .25s;border:none;cursor:pointer;
+}
+.btn-gold:hover{background:var(--gold-dark);transform:translateY(-2px)}
+.client-stats{
+  display:flex;align-items:center;gap:16px;
+}
+.avatars{
+  display:flex;
+}
+.avatar{
+  width:36px;height:36px;border-radius:50%;
+  border:2px solid var(--bg);overflow:hidden;
+  margin-right:-10px;
+}
+.avatar:last-child{margin-right:0}
+.avatar img{width:100%;height:100%;object-fit:cover}
+.avatar-placeholder{width:100%;height:100%;background:var(--border)}
+.stats-text{margin-left:8px}
+.stars-row{display:flex;gap:2px;color:var(--gold);font-size:13px}
+.stats-label{font-size:12px;color:var(--muted);font-weight:500}
+
+/* ══════════════════════════════════
+   BRAND LOGOS
+══════════════════════════════════ */
+.logos-strip{
+  display:flex;align-items:center;justify-content:center;gap:48px;
+  padding:24px 40px 80px;
+  flex-wrap:wrap;
+  border-bottom:1px solid var(--border);
+  margin:0 40px;
+}
+.logo-item{
+  font-family:'Switzer',sans-serif;font-weight:600;font-size:14px;
+  color:var(--muted);letter-spacing:0.06em;
+  display:flex;align-items:center;gap:6px;
+  opacity:0.6;transition:opacity .3s;
+}
+.logo-item:hover{opacity:1}
+.logo-icon{
+  width:18px;height:18px;border-radius:50%;background:var(--muted);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--bg);font-size:10px;font-weight:700;
+}
+
+/* ══════════════════════════════════
+   SERVICES
+══════════════════════════════════ */
+#services{padding:100px 40px 80px}
+.section-header-row{
+  display:flex;align-items:flex-start;justify-content:space-between;
+  margin-bottom:48px;gap:32px;flex-wrap:wrap;
+}
+.section-title{
+  font-size:clamp(28px,4vw,42px);font-weight:700;
+  letter-spacing:-0.02em;
+}
+.section-sub{
+  font-size:14px;color:var(--muted);max-width:300px;line-height:1.6;
+}
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+}
+.service-card{
+  background:var(--card-bg);border-radius:10px;
+  padding:24px 20px 48px;
+  position:relative;overflow:hidden;
+  border-bottom:3px dotted var(--border);
+  transition:box-shadow .3s,transform .3s;
+  cursor:default;
+}
+.service-card:hover{box-shadow:0 8px 32px rgba(0,0,0,0.08);transform:translateY(-3px)}
+.service-num{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:24px;height:24px;background:var(--black);color:var(--white);
+  font-size:11px;font-weight:700;border-radius:4px;
+  margin-bottom:40px;
+}
+.service-name{
+  font-family:'Switzer',sans-serif;font-size:18px;font-weight:700;
+  line-height:1.2;color:var(--black);margin-bottom:16px;
+}
+.service-desc{font-size:13px;color:var(--muted);line-height:1.65}
+.service-photo{
+  border-radius:10px;overflow:hidden;grid-row:span 1;
+  min-height:200px;
+  background:var(--border);
+}
+.service-photo img{width:100%;height:100%;object-fit:cover}
+
+/* row 2 starts at col 1, spans 3 */
+.services-row2{
+  display:grid;
+  grid-template-columns:repeat(3,1fr) 1fr;
+  gap:12px;
+  margin-top:12px;
+}
+
+/* ══════════════════════════════════
+   PROCESS
+══════════════════════════════════ */
+#process{
+  padding:100px 40px;
+  text-align:center;
+}
+.process-label{
+  font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:16px;
+}
+.process-title{
+  font-size:clamp(28px,4vw,48px);font-weight:700;letter-spacing:-0.02em;
+  max-width:500px;margin:0 auto 64px;
+}
+.process-stack{
+  display:flex;flex-direction:column;align-items:center;gap:12px;
+  max-width:480px;margin:0 auto;
+}
+.process-card{
+  background:var(--card-bg);border-radius:16px;
+  padding:28px 32px;width:100%;
+  text-align:center;position:relative;
+  box-shadow:0 2px 20px rgba(0,0,0,0.06);
+  transition:transform .3s;
+}
+.process-card:hover{transform:scale(1.02)}
+.process-card-num{
+  font-size:11px;font-weight:700;letter-spacing:0.1em;
+  color:var(--muted);margin-bottom:16px;
+  border-bottom:1px solid var(--border);padding-bottom:12px;
+}
+.process-card-name{
+  font-family:'Switzer',sans-serif;font-size:20px;font-weight:700;
+  margin-bottom:20px;
+}
+.process-card-img{
+  width:180px;height:180px;border-radius:50%;
+  margin:0 auto 20px;overflow:hidden;
+  background:var(--border);
+}
+.process-card-img img{width:100%;height:100%;object-fit:cover}
+.process-card-desc{font-size:13px;color:var(--muted);line-height:1.6}
+
+/* ══════════════════════════════════
+   WHY CHOOSE ME (BENTO)
+══════════════════════════════════ */
+#why{padding:100px 40px}
+.why-header{
+  display:flex;align-items:flex-start;justify-content:space-between;
+  margin-bottom:40px;gap:32px;flex-wrap:wrap;
+}
+.why-label{
+  font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:8px;
+  background:rgba(0,0,0,0.06);padding:4px 10px;border-radius:100px;
+  display:inline-block;
+}
+.why-title{font-size:clamp(26px,3.5vw,40px);font-weight:700;letter-spacing:-0.02em}
+.why-desc{font-size:14px;color:var(--muted);max-width:340px;line-height:1.65}
+
+.bento{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  grid-template-rows:auto auto;
+  gap:12px;
+}
+.bento-cell{
+  border-radius:16px;overflow:hidden;
+  position:relative;
+}
+/* Tailored Vision - photo with overlay */
+.bento-vision{
+  grid-row:span 2;
+  min-height:500px;
+  background:#222;
+}
+.bento-vision img{width:100%;height:100%;object-fit:cover;display:block}
+.bento-vision-overlay{
+  position:absolute;bottom:28px;left:28px;
+  font-family:'Switzer',sans-serif;font-size:22px;font-weight:700;color:var(--white);
+  text-shadow:0 2px 12px rgba(0,0,0,0.4);
+}
+
+/* Attention to Detail - beige card */
+.bento-detail{
+  background:#E8E0D2;
+  padding:32px 28px;
+}
+.bento-detail h3{font-size:20px;font-weight:700;margin-bottom:20px}
+.skill-checks{
+  display:flex;flex-wrap:wrap;gap:10px 24px;
+}
+.skill-check{
+  display:flex;align-items:center;gap:7px;
+  font-size:13px;color:var(--black);font-weight:500;
+}
+.skill-check svg{color:var(--gold-dark)}
+
+/* Curve lines decoration */
+.bento-detail-curves{
+  position:absolute;top:0;right:0;width:140px;height:140px;
+  opacity:0.15;
+}
+
+/* Shot with best gear */
+.bento-gear{
+  background:#C5CEC8;
+  padding:32px 28px;
+  display:flex;align-items:flex-end;
+}
+.bento-gear h3{font-size:18px;font-weight:700;color:var(--black)}
+
+/* Consistent Quality */
+.bento-quality{
+  background:var(--card-bg);
+  padding:32px 28px;
+  display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;
+}
+.bento-quality h3{font-size:22px;font-weight:700;text-align:center}
+.polaroid-stack{
+  display:flex;position:relative;width:120px;height:100px;
+  margin-bottom:12px;
+}
+.polaroid{
+  position:absolute;
+  width:80px;height:90px;
+  background:white;padding:6px 6px 20px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.12);
+  border-radius:2px;
+}
+.polaroid:nth-child(1){left:0;top:10px;transform:rotate(-8deg)}
+.polaroid:nth-child(2){left:20px;top:0;transform:rotate(3deg)}
+.polaroid:nth-child(3){left:40px;top:8px;transform:rotate(-2deg)}
+.polaroid-inner{width:100%;height:66px;background:var(--border);border-radius:1px}
+
+/* Seamless Collabs */
+.bento-collabs{
+  background:var(--card-bg);
+  padding:28px;
+}
+.bento-collabs h3{font-size:19px;font-weight:700;margin-bottom:12px}
+.client-mini{display:flex;align-items:center;gap:12px}
+.avatars-mini .avatar{width:30px;height:30px}
+.client-mini-text .stars-row{font-size:11px}
+.client-mini-text .stats-label{font-size:11px}
+
+/* Story-Driven */
+.bento-story{
+  grid-column:span 1;
+  background:#4a2820;
+  padding:32px 28px;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  min-height:200px;
+}
+.bento-story h3{font-size:22px;font-weight:700;color:var(--white);margin-bottom:8px}
+.bento-story p{font-size:13px;color:rgba(255,255,255,0.6);line-height:1.6}
+
+/* ══════════════════════════════════
+   SELECTED WORKS
+══════════════════════════════════ */
+#works{padding:100px 40px 80px}
+.works-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+}
+.work-card{
+  border-radius:12px;overflow:hidden;
+  position:relative;cursor:pointer;
+  transition:transform .4s ease;
+}
+.work-card:hover{transform:scale(1.02)}
+.work-img{
+  width:100%;aspect-ratio:3/4;
+  background:var(--border);
+  overflow:hidden;position:relative;
+}
+.work-img img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .6s ease;
+}
+.work-card:hover .work-img img{transform:scale(1.06)}
+.work-caption{
+  background:var(--card-bg);
+  padding:16px 18px;
+}
+.work-caption h3{font-size:17px;font-weight:700;letter-spacing:-0.01em}
+
+/* ══════════════════════════════════
+   TESTIMONIALS (dark full-bleed)
+══════════════════════════════════ */
+#testimonials{
+  position:relative;
+  background:var(--dark-section);
+  overflow:hidden;
+}
+.testimonial-scene{
+  position:relative;
+  min-height:100vh;
+  display:flex;align-items:center;justify-content:center;
+}
+.testimonial-bg{
+  position:absolute;inset:0;
+}
+.testimonial-bg img{
+  width:100%;height:100%;object-fit:cover;
+  opacity:0.7;
+}
+.testimonial-bg-gradient{
+  position:absolute;inset:0;
+  background:linear-gradient(to bottom,rgba(26,26,24,0.3) 0%,rgba(26,26,24,0.1) 100%);
+}
+.testimonial-card{
+  position:relative;z-index:2;
+  background:var(--white);
+  border-radius:16px;
+  padding:32px 32px 40px;
+  width:340px;
+  box-shadow:0 24px 80px rgba(0,0,0,0.3);
+}
+.testimonial-card-header{
+  display:flex;align-items:center;justify-content:space-between;
+  padding-bottom:16px;
+  border-bottom:1px solid var(--border);
+  margin-bottom:16px;
+}
+.testimonial-stars{display:flex;gap:3px;color:var(--gold)}
+.testimonial-num{font-size:12px;color:var(--muted);font-weight:600}
+.testimonial-author{
+  display:flex;align-items:center;gap:12px;
+  margin-bottom:28px;
+}
+.t-avatar{
+  width:44px;height:44px;border-radius:50%;overflow:hidden;
+  background:var(--border);flex-shrink:0;
+}
+.t-avatar img{width:100%;height:100%;object-fit:cover}
+.t-name{font-family:'Switzer',sans-serif;font-size:14px;font-weight:700}
+.t-role{font-size:12px;color:var(--muted)}
+.testimonial-quote{
+  font-family:'Switzer',sans-serif;font-size:clamp(18px,2vw,24px);
+  font-weight:700;line-height:1.3;color:var(--black);
+}
+
+/* testimonial slides */
+.testimonial-slides{
+  position:relative;
+  width:100%;
+}
+.t-slide{
+  display:none;
+  min-height:100vh;
+  align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+}
+.t-slide.active{display:flex}
+.t-slide-bg{
+  position:absolute;inset:0;
+}
+.t-slide-bg img{width:100%;height:100%;object-fit:cover}
+.t-slide-bg::after{
+  content:'';position:absolute;inset:0;
+  background:rgba(0,0,0,0.35);
+}
+.t-nav{
+  position:absolute;bottom:32px;right:40px;z-index:10;
+  display:flex;gap:8px;
+}
+.t-dot{
+  width:8px;height:8px;border-radius:50%;
+  background:rgba(255,255,255,0.3);border:none;cursor:pointer;
+  transition:background .3s;
+}
+.t-dot.active{background:var(--white)}
+
+/* ══════════════════════════════════
+   LATEST STORIES
+══════════════════════════════════ */
+#blog{padding:100px 40px 80px}
+.blog-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:0;
+  margin-top:40px;
+}
+.blog-card{
+  border-top:1px solid var(--border);
+  padding:24px 0 0;
+  padding-right:32px;
+  cursor:pointer;
+  transition:opacity .25s;
+}
+.blog-card:hover{opacity:0.7}
+.blog-card:not(:last-child){border-right:1px solid var(--border);padding-right:32px;margin-right:0}
+.blog-card:not(:first-child){padding-left:32px}
+.blog-card-title{
+  font-family:'Switzer',sans-serif;font-size:16px;font-weight:700;
+  margin-bottom:16px;line-height:1.3;
+}
+.blog-card-img{
+  width:100%;aspect-ratio:4/3;
+  border-radius:8px;overflow:hidden;
+  background:var(--border);
+}
+.blog-card-img img{width:100%;height:100%;object-fit:cover}
+
+/* ══════════════════════════════════
+   FAQ
+══════════════════════════════════ */
+#faq{
+  padding:100px 40px;
+  display:grid;
+  grid-template-columns:1fr 1.4fr;
+  gap:80px;
+  align-items:start;
+}
+.faq-left h2{
+  font-size:clamp(32px,5vw,56px);
+  font-weight:700;letter-spacing:-0.03em;
+  line-height:1;
+}
+.faq-list{display:flex;flex-direction:column}
+.faq-item{
+  border-bottom:1px solid var(--border);
+}
+.faq-q{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:20px 0;
+  font-family:'Switzer',sans-serif;font-size:15px;font-weight:600;
+  cursor:pointer;color:var(--black);
+  background:none;border:none;width:100%;text-align:left;
+  gap:16px;
+}
+.faq-icon{
+  flex-shrink:0;width:28px;height:28px;border-radius:50%;
+  border:1px solid var(--border);display:flex;align-items:center;justify-content:center;
+  font-size:16px;color:var(--muted);transition:all .3s;
+}
+.faq-item.open .faq-icon{transform:rotate(45deg);color:var(--black);border-color:var(--black)}
+.faq-answer{
+  max-height:0;overflow:hidden;
+  transition:max-height .4s ease,padding .3s;
+  font-size:14px;color:var(--muted);line-height:1.7;
+}
+.faq-item.open .faq-answer{max-height:200px;padding-bottom:20px}
+
+/* ══════════════════════════════════
+   CTA SECTION
+══════════════════════════════════ */
+#cta{
+  padding:120px 40px 0;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.cta-title{
+  font-size:clamp(32px,5vw,64px);
+  font-weight:700;letter-spacing:-0.03em;
+  line-height:1.05;max-width:600px;margin:0 auto 16px;
+}
+.cta-sub{
+  font-size:15px;color:var(--muted);
+  max-width:380px;margin:0 auto 40px;line-height:1.6;
+}
+.cta-person{
+  margin-top:60px;
+  height:480px;position:relative;
+  display:flex;align-items:flex-end;justify-content:center;
+}
+.cta-person img{
+  height:100%;width:auto;max-width:340px;
+  object-fit:contain;object-position:bottom;
+  display:block;
+}
+.cta-person-placeholder{
+  width:280px;height:100%;
+  background:linear-gradient(to bottom,transparent,var(--border));
+  border-radius:200px 200px 0 0;
+  display:flex;align-items:center;justify-content:center;
+  font-size:80px;opacity:0.3;
+}
+
+/* ══════════════════════════════════
+   FOOTER
+══════════════════════════════════ */
+footer{
+  background:var(--bg);
+  position:relative;
+  overflow:hidden;
+  padding:0 40px;
+}
+.footer-inner{
+  background:var(--card-bg);
+  border-radius:20px 20px 0 0;
+  padding:48px 48px 32px;
+  position:relative;
+  overflow:hidden;
+}
+.footer-person{
+  position:absolute;top:-120px;left:50%;transform:translateX(-50%);
+  width:360px;height:480px;
+  pointer-events:none;z-index:0;
+}
+.footer-person img{
+  width:100%;height:100%;
+  object-fit:contain;object-position:bottom;
+}
+.footer-content{
+  position:relative;z-index:1;
+  display:grid;
+  grid-template-columns:1fr auto auto;
+  gap:60px;
+  align-items:start;
+}
+.footer-brand-name{
+  font-family:'Switzer',sans-serif;font-size:14px;font-weight:700;
+  letter-spacing:0.1em;text-transform:uppercase;margin-bottom:10px;
+}
+.footer-tagline{font-size:13px;color:var(--muted);max-width:280px;line-height:1.6;margin-bottom:24px}
+.footer-socials{display:flex;gap:10px}
+.social-circle{
+  width:38px;height:38px;border-radius:50%;
+  background:var(--black);color:var(--white);
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;text-decoration:none;font-weight:700;
+  transition:background .25s;
+}
+.social-circle:hover{background:var(--gold)}
+.footer-links-group{}
+.footer-links-title{
+  font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
+  margin-bottom:16px;color:var(--black);
+}
+.footer-links-group a{
+  display:block;font-size:13px;color:var(--muted);
+  text-decoration:none;margin-bottom:10px;
+  transition:color .25s;
+}
+.footer-links-group a:hover{color:var(--black)}
+.footer-bottom{
+  display:flex;align-items:center;justify-content:space-between;
+  padding-top:32px;margin-top:32px;
+  border-top:1px solid var(--border);
+  font-size:12px;color:var(--muted);
+  position:relative;z-index:1;
+}
+.footer-bottom a{color:var(--muted);text-decoration:none}
+.footer-bottom a:hover{color:var(--black)}
+
+/* ══════════════════════════════════
+   SCROLL ANIMATIONS
+══════════════════════════════════ */
+.reveal{
+  opacity:0;transform:translateY(40px);
+  transition:opacity .8s ease, transform .8s ease;
+}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+
+/* ══════════════════════════════════
+   RESPONSIVE — TABLET ≤ 900px
+══════════════════════════════════ */
+@media(max-width:900px){
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+  .services-row2{grid-template-columns:repeat(2,1fr) !important}
+  .bento{grid-template-columns:1fr 1fr}
+  .bento-vision{min-height:320px}
+  .works-grid{grid-template-columns:1fr 1fr}
+  .blog-grid{grid-template-columns:1fr}
+  .blog-card{border-right:none!important;padding:24px 0 0!important}
+  #faq{grid-template-columns:1fr;gap:32px}
+  .footer-content{grid-template-columns:1fr 1fr;gap:40px}
+  .footer-person{display:none}
+  .section-header-row{flex-direction:column;align-items:flex-start;gap:20px}
+}
+
+/* ══════════════════════════════════
+   RESPONSIVE — MOBILE ≤ 809px
+══════════════════════════════════ */
+@media(max-width:809px){
+  /* Nav */
+  .top-nav{padding:16px 20px}
+  .nav-brand .sub{display:none}
+  .nav-brand .slash{display:none}
+
+  /* Sections padding */
+  #services,#process,#why,#works,#blog,#faq,#cta{padding:64px 20px}
+  .logos-strip{margin:0 20px;gap:24px;padding:20px 0 48px}
+
+  /* Hero */
+  .hero-item.active{font-size:clamp(36px,11vw,60px)}
+
+  /* Photo strip: horizontal scroll */
+  .photo-strip{
+    overflow-x:auto;overflow-y:hidden;
+    justify-content:flex-start;
+    padding:0 20px;gap:10px;
+    scrollbar-width:none;-ms-overflow-style:none;
+    margin-bottom:48px;
+    -webkit-overflow-scrolling:touch;
+  }
+  .photo-strip::-webkit-scrollbar{display:none}
+  .strip-photo:not(.featured){width:180px;height:240px;flex-shrink:0}
+  .strip-photo.featured{width:220px;height:280px;flex-shrink:0}
+
+  /* Statement */
+  .statement{padding:40px 20px 60px}
+
+  /* CTA strip */
+  .cta-strip{flex-direction:column;align-items:flex-start;padding:0 20px 40px;gap:20px}
+
+  /* Services: 1 column */
+  .services-grid{grid-template-columns:1fr}
+  .services-row2{grid-template-columns:1fr!important}
+  .service-photo{min-height:240px}
+
+  /* Process */
+  .process-stack{max-width:100%}
+  .process-card{border-radius:12px}
+
+  /* Why bento: single column */
+  .bento{grid-template-columns:1fr}
+  .bento-vision{min-height:280px}
+  .bento-story{min-height:180px}
+  .why-header{flex-direction:column;gap:16px}
+  .why-desc{max-width:100%}
+
+  /* Works */
+  .works-grid{grid-template-columns:1fr}
+  .work-img{aspect-ratio:4/3}
+
+  /* Blog */
+  .blog-grid{grid-template-columns:1fr}
+  .blog-card{padding:24px 0 0!important;border-right:none!important;border-top:1px solid var(--border)}
+
+  /* FAQ */
+  #faq{grid-template-columns:1fr;gap:28px;padding:64px 20px}
+  .faq-left h2{font-size:clamp(36px,10vw,52px)}
+
+  /* CTA */
+  .cta-person{height:360px}
+
+  /* Footer */
+  .footer-inner{padding:32px 20px 24px}
+  .footer-content{grid-template-columns:1fr;gap:32px}
+  .footer-bottom{flex-direction:column;gap:8px;text-align:center}
+
+  /* Section header row */
+  .section-header-row{flex-direction:column;align-items:flex-start;gap:20px}
+}
+
+/* ══════════════════════════════════
+   RESPONSIVE — SMALL MOBILE ≤ 480px
+══════════════════════════════════ */
+@media(max-width:480px){
+  .top-nav{padding:14px 16px}
+  .btn-contact{padding:8px 16px;font-size:10px}
+  #services,#process,#why,#works,#blog,#faq,#cta{padding:48px 16px}
+  .statement{padding:32px 16px 48px}
+  .cta-strip{padding:0 16px 32px}
+  .logos-strip{margin:0 16px}
+  .process-card-img{width:140px;height:140px}
+  .testimonial-card{width:calc(100vw - 40px);padding:24px}
+  .footer-inner{padding:24px 16px 20px}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP NAV -->
+<nav class="top-nav">
+  <a href="#" class="nav-brand">
+    <span>MC.</span>
+    <span class="slash">//</span>
+    <span class="sub">UMA CONTADORA DE HISTÓRIAS VISUAL</span>
+  </a>
+  <a href="#faq" class="btn-contact">Contato</a>
+</nav>
+
+<!-- BOTTOM BAR -->
+<div class="bottom-bar">
+  <div class="bottom-bar-menu">
+    <button class="btn-menu" id="menuBtn">
+      Menu<span class="plus">+</span>
+    </button>
+  </div>
+  <span class="bottom-name">Corazón</span>
+</div>
+
+<!-- MENU OVERLAY -->
+<div class="menu-overlay" id="menuOverlay">
+  <button class="menu-close" id="menuClose">✕</button>
+  <a href="#" onclick="closeMenu()">Sobre</a>
+  <a href="#works" onclick="closeMenu()">Portfólio</a>
+  <a href="#blog" onclick="closeMenu()">Blog</a>
+  <a href="#faq" onclick="closeMenu()">Contato</a>
+  <div class="menu-overlay-bottom">
+    <a href="#" onclick="closeMenu()">Termos</a>
+    <a href="#" onclick="closeMenu()">Privacidade</a>
+  </div>
+</div>
+
+<!-- ══ HERO ══ -->
+<section id="hero">
+  <div class="hero-selector" id="heroSelector">
+    <div class="hero-item small" data-index="0">A Criação</div>
+    <div class="hero-item active" data-index="1">Videografia</div>
+    <div class="hero-item small" data-index="2">Fotografia</div>
+  </div>
+</section>
+
+<!-- ══ PHOTO STRIP ══ -->
+<div class="photo-strip reveal">
+  <div class="strip-photo">
+    <div class="photo-placeholder" style="background:linear-gradient(135deg,#d4c9b8,#c8baa8);height:300px;width:220px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:32px;opacity:0.5">📸</div>
+  </div>
+  <div class="strip-photo">
+    <div class="photo-placeholder" style="background:linear-gradient(135deg,#c5d0c8,#b8c4b0);height:300px;width:220px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:32px;opacity:0.5">🌿</div>
+  </div>
+  <div class="strip-photo featured">
+    <div class="photo-placeholder" style="background:linear-gradient(135deg,#b8a898,#a89888);height:360px;width:280px;display:flex;align-items:center;justify-content:center;font-size:48px;opacity:0.5">👤</div>
+  </div>
+  <div class="strip-photo">
+    <div class="photo-placeholder" style="background:linear-gradient(135deg,#c8c0b0,#b8b0a0);height:300px;width:220px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:32px;opacity:0.5">🚴</div>
+  </div>
+  <div class="strip-photo">
+    <div class="photo-placeholder" style="background:linear-gradient(135deg,#ccc4b8,#bcb4a8);height:300px;width:220px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:32px;opacity:0.5">🧍</div>
+  </div>
+</div>
+
+<!-- ══ STATEMENT ══ -->
+<div class="statement reveal">
+  <p>Qualquer pessoa pode tirar fotos ou gravar vídeos. O que me diferencia é a história que conto através deles. Cada enquadramento é intencional; construído com detalhe, emoção e propósito.</p>
+</div>
+
+<!-- ══ CTA STRIP ══ -->
+<div class="cta-strip reveal">
+  <a href="#works" class="btn-gold">Meu Portfólio</a>
+  <div class="client-stats">
+    <div class="avatars">
+      <div class="avatar"><div class="avatar-placeholder" style="background:#c8b8a8"></div></div>
+      <div class="avatar"><div class="avatar-placeholder" style="background:#b8a898"></div></div>
+      <div class="avatar"><div class="avatar-placeholder" style="background:#d8c8b8"></div></div>
+    </div>
+    <div class="stats-text">
+      <div class="stars-row">★★★★★</div>
+      <div class="stats-label">540+ Clientes no Mundo</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ LOGOS ══ -->
+<div class="logos-strip reveal">
+  <div class="logo-item">
+    <span style="font-style:italic;font-family:Georgia,serif">theo</span>
+  </div>
+  <div class="logo-item">
+    <div class="logo-icon" style="background:#555">◑</div>
+    <span>Amsterdam</span>
+  </div>
+  <div class="logo-item">
+    <div class="logo-icon">✦</div>
+    <span>luminous</span>
+  </div>
+  <div class="logo-item">
+    <div class="logo-icon" style="background:#888;border-radius:3px;font-size:8px">M</div>
+    <span style="letter-spacing:0.12em">MILANO</span>
+  </div>
+</div>
+
+<!-- ══ SERVICES ══ -->
+<section id="services">
+  <div class="section-header-row reveal">
+    <div>
+      <h2 class="section-title">Meus Serviços</h2>
+      <p class="section-sub">Seja para fotos, vídeos ou direção criativa completa, entrego visuais que elevam a sua identidade.</p>
+    </div>
+    <a href="#" class="btn-gold">Saiba Mais</a>
+  </div>
+
+  <div class="services-grid reveal">
+    <div class="service-card">
+      <div class="service-num">1</div>
+      <div class="service-name">Fotografia de Retratos</div>
+      <p class="service-desc">Retratos profissionais que realçam personalidade e estilo.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-num">2</div>
+      <div class="service-name">Marca & Lifestyle</div>
+      <p class="service-desc">Visuais autênticos que dão vida à história da sua marca.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-num">3</div>
+      <div class="service-name">Cobertura de Eventos</div>
+      <p class="service-desc">Cobertura de alta qualidade que captura cada momento importante.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-num">4</div>
+      <div class="service-name">Fotografia de Produto</div>
+      <p class="service-desc">Imagens nítidas e detalhadas que fazem seus produtos se destacar.</p>
+    </div>
+  </div>
+
+  <div class="services-row2 reveal" style="margin-top:12px">
+    <div class="service-card">
+      <div class="service-num">5</div>
+      <div class="service-name">Videografia Cinematográfica</div>
+      <p class="service-desc">Vídeos envolventes criados para inspirar e conectar públicos.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-num">6</div>
+      <div class="service-name">Pós-Produção & Edição</div>
+      <p class="service-desc">Edição profissional que refina e eleva o seu conteúdo.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-num">7</div>
+      <div class="service-name">Projetos Documentais</div>
+      <p class="service-desc">Narrativas impactantes que revelam pessoas e propósitos.</p>
+    </div>
+    <div class="service-photo">
+      <div style="width:100%;height:100%;min-height:200px;background:linear-gradient(135deg,#4a8fa0,#2a6070);display:flex;align-items:center;justify-content:center;font-size:48px;opacity:0.6">🏝️</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROCESS ══ -->
+<section id="process">
+  <div class="process-label">Meu Processo</div>
+  <h2 class="process-title reveal">Um Caminho Claro para Visuais Excepcionais</h2>
+
+  <div class="process-stack">
+    <div class="process-card reveal">
+      <div class="process-card-num">1</div>
+      <div class="process-card-name">Descoberta</div>
+      <div class="process-card-img" style="background:linear-gradient(135deg,#f0d8c0,#e8c8a8)">
+        <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:60px">🌺</div>
+      </div>
+      <p class="process-card-desc">Entender sua visão, objetivos e história antes de ligar a câmera.</p>
+    </div>
+    <div class="process-card reveal reveal-delay-1">
+      <div class="process-card-num">2</div>
+      <div class="process-card-name">Planejamento</div>
+      <div class="process-card-img" style="background:linear-gradient(135deg,#d8e8e0,#c8d8d0)">
+        <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:60px">📋</div>
+      </div>
+      <p class="process-card-desc">Criando uma abordagem personalizada com painéis de humor, listas de cenas e cronogramas.</p>
+    </div>
+    <div class="process-card reveal reveal-delay-2">
+      <div class="process-card-num">3</div>
+      <div class="process-card-name">Captação</div>
+      <div class="process-card-img" style="background:linear-gradient(135deg,#f8e8a0,#f0d880)">
+        <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:60px">🌼</div>
+      </div>
+      <p class="process-card-desc">Capturando momentos com iluminação precisa, composição e emoção em foco.</p>
+    </div>
+    <div class="process-card reveal reveal-delay-1">
+      <div class="process-card-num">4</div>
+      <div class="process-card-name">Edição</div>
+      <div class="process-card-img" style="background:linear-gradient(135deg,#e8d8f0,#d8c8e8)">
+        <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:60px">🎨</div>
+      </div>
+      <p class="process-card-desc">Gradação de cores em cada imagem para revelar a história por trás delas.</p>
+    </div>
+    <div class="process-card reveal reveal-delay-2">
+      <div class="process-card-num">5</div>
+      <div class="process-card-name">Entrega</div>
+      <div class="process-card-img" style="background:linear-gradient(135deg,#f8d8d8,#f0c8c0)">
+        <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:60px">📦</div>
+      </div>
+      <p class="process-card-desc">Apresentando arquivos de alta qualidade em formatos prontos para todas as plataformas.</p>
+    </div>
+    <div class="process-card reveal reveal-delay-3">
+      <div class="process-card-num">6</div>
+      <div class="process-card-name">Otimização</div>
+      <div class="process-card-img" style="background:linear-gradient(135deg,#d8f0e8,#c8e8d8)">
+        <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:60px">🚀</div>
+      </div>
+      <p class="process-card-desc">Revisando resultados e refinando o fluxo de trabalho para resultados ainda melhores.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ WHY CHOOSE ME ══ -->
+<section id="why">
+  <div class="why-header reveal">
+    <div>
+      <div class="why-label">Por que me Escolher</div>
+      <h2 class="why-title">Construído na Confiança,<br/>Movido pela Qualidade</h2>
+    </div>
+    <p class="why-desc">Habilidade, precisão e foco claro em criar visuais que movem pessoas e marcas para frente.</p>
+  </div>
+
+  <div class="bento reveal">
+    <!-- Tailored Vision -->
+    <div class="bento-cell bento-vision" style="background:linear-gradient(160deg,#2a1a10,#4a3020)">
+      <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:120px;opacity:0.3">👁️</div>
+      <div class="bento-vision-overlay">Visão Personalizada</div>
+    </div>
+
+    <!-- Attention to Detail -->
+    <div class="bento-cell bento-detail" style="position:relative">
+      <h3>Atenção aos Detalhes</h3>
+      <div class="skill-checks" style="margin-top:20px">
+        <div class="skill-check">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Iluminação
+        </div>
+        <div class="skill-check">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Enquadramento
+        </div>
+        <div class="skill-check">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Cor
+        </div>
+        <div class="skill-check">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Composição
+        </div>
+        <div class="skill-check">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Edição
+        </div>
+        <div class="skill-check">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Som
+        </div>
+      </div>
+      <!-- decorative curves -->
+      <svg class="bento-detail-curves" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="140" cy="0" r="60" stroke="#C8973A" stroke-width="1"/>
+        <circle cx="140" cy="0" r="80" stroke="#C8973A" stroke-width="1"/>
+        <circle cx="140" cy="0" r="100" stroke="#C8973A" stroke-width="1"/>
+      </svg>
+    </div>
+
+    <!-- Shot with best gear -->
+    <div class="bento-cell bento-gear" style="min-height:200px">
+      <h3>Captado com o Melhor Equipamento</h3>
+    </div>
+
+    <!-- Consistent Quality -->
+    <div class="bento-cell bento-quality">
+      <div class="polaroid-stack">
+        <div class="polaroid"><div class="polaroid-inner" style="background:#d8c8b8"></div></div>
+        <div class="polaroid"><div class="polaroid-inner" style="background:#c8b8a8"></div></div>
+        <div class="polaroid"><div class="polaroid-inner" style="background:#e8d8c8"></div></div>
+      </div>
+      <h3>Qualidade Consistente</h3>
+    </div>
+
+    <!-- Seamless Collabs -->
+    <div class="bento-cell bento-collabs">
+      <h3>Colaborações Fluidas</h3>
+      <div class="client-mini" style="margin-top:12px">
+        <div class="avatars avatars-mini">
+          <div class="avatar" style="width:30px;height:30px"><div class="avatar-placeholder" style="background:#c8b8a8"></div></div>
+          <div class="avatar" style="width:30px;height:30px"><div class="avatar-placeholder" style="background:#b8a898"></div></div>
+          <div class="avatar" style="width:30px;height:30px"><div class="avatar-placeholder" style="background:#d8c8b8"></div></div>
+        </div>
+        <div class="stats-text" style="margin-left:12px">
+          <div class="stars-row">★★★★★</div>
+          <div class="stats-label">540+ Clientes no Mundo</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Story-Driven -->
+    <div class="bento-cell bento-story">
+      <h3>Abordagem Narrativa</h3>
+      <p>Foco em visuais que conectam e deixam uma impressão duradoura.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SELECTED WORKS ══ -->
+<section id="works">
+  <div class="section-header-row reveal">
+    <h2 class="section-title">Trabalhos Selecionados</h2>
+    <a href="#" class="btn-gold">Meu Portfólio</a>
+  </div>
+  <div class="works-grid reveal">
+    <div class="work-card">
+      <div class="work-img" style="background:linear-gradient(160deg,#1a1a1a,#3a3a3a)">
+        <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:80px;opacity:0.3">🚴</div>
+      </div>
+      <div class="work-caption">
+        <h3>Foco no Atleta</h3>
+      </div>
+    </div>
+    <div class="work-card">
+      <div class="work-img" style="background:linear-gradient(160deg,#808080,#606060)">
+        <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:80px;opacity:0.3">🌿</div>
+      </div>
+      <div class="work-caption">
+        <h3>O Chamado da Natureza</h3>
+      </div>
+    </div>
+    <div class="work-card">
+      <div class="work-img" style="background:linear-gradient(160deg,#1a2030,#2a3040)">
+        <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:80px;opacity:0.3">🌆</div>
+      </div>
+      <div class="work-caption">
+        <h3>Contemplação Urbana</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TESTIMONIALS ══ -->
+<section id="testimonials">
+  <div class="testimonial-slides">
+    <!-- Slide 1 -->
+    <div class="t-slide active">
+      <div class="t-slide-bg" style="background:#1a1208">
+        <div style="width:100%;height:100%;background:linear-gradient(160deg,#0a0806,#2a1a10);opacity:0.9"></div>
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:200px;opacity:0.08">🚗</div>
+      </div>
+      <div style="position:absolute;inset:0;background:rgba(0,0,0,0.25)"></div>
+      <div class="testimonial-card" style="position:relative;z-index:2">
+        <div class="testimonial-card-header">
+          <div class="testimonial-stars">★★★★★</div>
+          <span class="testimonial-num">1</span>
+        </div>
+        <div class="testimonial-author">
+          <div class="t-avatar" style="background:#c87840"></div>
+          <div>
+            <div class="t-name">Danny Rose</div>
+            <div class="t-role">Gerente de Marca, Solé Studio</div>
+          </div>
+        </div>
+        <p class="testimonial-quote">Visuais excepcionais que capturaram nossa marca perfeitamente.</p>
+      </div>
+    </div>
+    <!-- Slide 2 -->
+    <div class="t-slide">
+      <div class="t-slide-bg" style="background:#0a0a08">
+        <div style="width:100%;height:100%;background:linear-gradient(160deg,#080806,#181810);opacity:0.9"></div>
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:200px;opacity:0.06">🚗</div>
+      </div>
+      <div style="position:absolute;inset:0;background:rgba(0,0,0,0.35)"></div>
+      <div class="testimonial-card" style="position:relative;z-index:2">
+        <div class="testimonial-card-header">
+          <div class="testimonial-stars">★★★★★</div>
+          <span class="testimonial-num">2</span>
+        </div>
+        <div class="testimonial-author">
+          <div class="t-avatar" style="background:#a05030"></div>
+          <div>
+            <div class="t-name">David Nguyen</div>
+            <div class="t-role">Diretor Criativo, FrameHaus</div>
+          </div>
+        </div>
+        <p class="testimonial-quote">Um processo incrivelmente fluido, resultados deslumbrantes. Verdadeiramente uma profissional.</p>
+      </div>
+    </div>
+    <!-- Slide 3 -->
+    <div class="t-slide">
+      <div class="t-slide-bg" style="background:#080810">
+        <div style="width:100%;height:100%;background:linear-gradient(160deg,#060608,#101018);opacity:0.9"></div>
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:200px;opacity:0.06">🚗</div>
+      </div>
+      <div style="position:absolute;inset:0;background:rgba(0,0,0,0.35)"></div>
+      <div class="testimonial-card" style="position:relative;z-index:2">
+        <div class="testimonial-card-header">
+          <div class="testimonial-stars">★★★★★</div>
+          <span class="testimonial-num">3</span>
+        </div>
+        <div class="testimonial-author">
+          <div class="t-avatar" style="background:#803820"></div>
+          <div>
+            <div class="t-name">Alisha Moore</div>
+            <div class="t-role">Organizadora de Eventos, Moments & Co.</div>
+          </div>
+        </div>
+        <p class="testimonial-quote">Cada foto contou uma história. Não poderia pedir algo melhor.</p>
+      </div>
+    </div>
+
+    <!-- Nav dots -->
+    <div class="t-nav">
+      <button class="t-dot active" onclick="goSlide(0)"></button>
+      <button class="t-dot" onclick="goSlide(1)"></button>
+      <button class="t-dot" onclick="goSlide(2)"></button>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BLOG ══ -->
+<section id="blog">
+  <div class="section-header-row reveal">
+    <h2 class="section-title">Últimas Histórias</h2>
+    <a href="#" class="btn-gold">Mais Histórias</a>
+  </div>
+  <div class="blog-grid reveal">
+    <div class="blog-card">
+      <div class="blog-card-title">Por Trás das Lentes de um Filme de Marca</div>
+      <div class="blog-card-img" style="background:linear-gradient(135deg,#e8c8b0,#d8b8a0)">
+        <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:48px;opacity:0.4">🎬</div>
+      </div>
+    </div>
+    <div class="blog-card">
+      <div class="blog-card-title">O Poder da Luz Natural</div>
+      <div class="blog-card-img" style="background:linear-gradient(135deg,#d8e8d0,#c0d8b8)">
+        <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:48px;opacity:0.4">☀️</div>
+      </div>
+    </div>
+    <div class="blog-card">
+      <div class="blog-card-title">Capturando Emoção na Fotografia de Retratos</div>
+      <div class="blog-card-img" style="background:linear-gradient(135deg,#2a1a10,#3a2418)">
+        <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:48px;opacity:0.4">🖼️</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ ══ -->
+<section id="faq">
+  <div class="faq-left reveal">
+    <h2>Alguma<br/>Dúvida?</h2>
+  </div>
+  <div class="faq-list reveal">
+    <div class="faq-item open">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Que tipos de projetos você realiza?
+        <span class="faq-icon">×</span>
+      </button>
+      <div class="faq-answer" style="max-height:200px;padding-bottom:20px">
+        Trabalho com fotografia, videografia e direção criativa para marcas, pessoas físicas e eventos.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Quanto tempo leva para receber os arquivos finais?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        Normalmente de 7 a 14 dias úteis após a sessão, dependendo do escopo. Opções com prazo reduzido disponíveis.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Você oferece pacotes personalizados?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        Sim — cada projeto é orçado individualmente com base no escopo, duração e entregáveis.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Você está disponível para viagens?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        Com certeza. Estou disponível para projetos em qualquer lugar do mundo. Os custos de deslocamento são incluídos no contrato do projeto.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA ══ -->
+<section id="cta">
+  <div class="reveal">
+    <h2 class="cta-title">Transforme Suas Ideias em Visuais de Outro Nível</h2>
+    <p class="cta-sub">Criando visuais que conectam e causam impacto para marcas e pessoas.</p>
+    <a href="mailto:hello@corazon.com" class="btn-gold">Entre em Contato</a>
+  </div>
+  <div class="cta-person">
+    <div class="cta-person-placeholder">🧍</div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-person">
+      <div style="width:100%;height:100%;background:linear-gradient(to bottom,transparent 30%,var(--card-bg));display:flex;align-items:flex-end;justify-content:center;font-size:160px;opacity:0.15">🧍</div>
+    </div>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <div class="footer-brand-name">Corazón</div>
+        <p class="footer-tagline">Transforme seus vídeos e fotos em um portfólio visual deslumbrante.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-circle">𝕏</a>
+          <a href="#" class="social-circle">📷</a>
+        </div>
+      </div>
+      <div class="footer-links-group">
+        <div class="footer-links-title">Explorar</div>
+        <a href="#works">Portfólio</a>
+        <a href="#blog">Blog</a>
+        <a href="#why">Sobre</a>
+        <a href="#faq">Contato</a>
+      </div>
+      <div class="footer-links-group">
+        <div class="footer-links-title">Legal</div>
+        <a href="#">Termos de Uso</a>
+        <a href="#">Política de Privacidade</a>
+        <a href="#">404</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Criado por <a href="#">Markus Corazzione</a></span>
+      <span>MC. © 2026</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── MENU ──
+document.getElementById('menuBtn').addEventListener('click',()=>{
+  document.getElementById('menuOverlay').classList.add('open');
+  document.body.style.overflow='hidden';
+});
+document.getElementById('menuClose').addEventListener('click',closeMenu);
+function closeMenu(){
+  document.getElementById('menuOverlay').classList.remove('open');
+  document.body.style.overflow='';
+}
+
+// ── HERO SELECTOR ──
+const heroItems = document.querySelectorAll('.hero-item');
+let currentActive = 1;
+
+heroItems.forEach((item,i)=>{
+  item.addEventListener('click',()=>setHeroActive(i));
+});
+
+function setHeroActive(idx){
+  heroItems.forEach((item,i)=>{
+    if(i===idx){
+      item.className='hero-item active';
+    } else {
+      item.className='hero-item small';
+    }
+  });
+  currentActive=idx;
+}
+
+// Auto-cycle hero on scroll
+let heroScrollY=0;
+window.addEventListener('scroll',()=>{
+  const hero=document.getElementById('hero');
+  if(!hero) return;
+  const heroBottom=hero.offsetTop+hero.offsetHeight;
+  if(window.scrollY<heroBottom){
+    const progress=window.scrollY/(hero.offsetHeight*0.5);
+    const idx=Math.min(2,Math.floor(progress*3));
+    if(idx!==currentActive) setHeroActive(idx);
+  }
+});
+
+// ── TESTIMONIAL SLIDES ──
+let currentSlide=0;
+const slides=document.querySelectorAll('.t-slide');
+const dots=document.querySelectorAll('.t-dot');
+
+function goSlide(idx){
+  slides[currentSlide].classList.remove('active');
+  dots[currentSlide].classList.remove('active');
+  currentSlide=idx;
+  slides[currentSlide].classList.add('active');
+  dots[currentSlide].classList.add('active');
+}
+
+// Auto-advance
+setInterval(()=>goSlide((currentSlide+1)%slides.length),5000);
+
+// ── FAQ ──
+function toggleFaq(btn){
+  const item=btn.parentElement;
+  const isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i=>{
+    i.classList.remove('open');
+    i.querySelector('.faq-icon').textContent='+';
+  });
+  if(!isOpen){
+    item.classList.add('open');
+    btn.querySelector('.faq-icon').textContent='×';
+  }
+}
+
+// ── SCROLL REVEAL ──
+const revealEls=document.querySelectorAll('.reveal');
+const revealObs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('visible');
+    }
+  });
+},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+revealEls.forEach(el=>revealObs.observe(el));
+
+// ── PHOTO STRIP PARALLAX ──
+window.addEventListener('scroll',()=>{
+  const strip=document.querySelector('.photo-strip');
+  if(!strip) return;
+  const rect=strip.getBoundingClientRect();
+  if(rect.top<window.innerHeight && rect.bottom>0){
+    const progress=(window.innerHeight-rect.top)/(window.innerHeight+rect.height);
+    const photos=strip.querySelectorAll('.strip-photo:not(.featured)');
+    photos.forEach((p,i)=>{
+      const dir=i%2===0?1:-1;
+      p.style.transform=`translateY(${dir*progress*20}px)`;
+    });
+  }
+});
+
+// ── PROCESS CARDS STAGGER ──
+const processCards=document.querySelectorAll('.process-card');
+const processObs=new IntersectionObserver((entries)=>{
+  entries.forEach((e,i)=>{
+    if(e.isIntersecting){
+      setTimeout(()=>e.target.classList.add('visible'),i*80);
+    }
+  });
+},{threshold:0.1});
+processCards.forEach(c=>processObs.observe(c));
+</script>
+</body>
+</html>
